@@ -1,4 +1,21 @@
-<html lang="en"><head>
+<!DOCTYPE ht
+
+<!-- Password Modal - Hidden by default -->
+<div id="passwordModal" style="display: none;">
+    <div id="passwordModalOverlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10001; display: flex; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 400px; width: 90%;">
+            <h3 style="margin: 0 0 20px 0; color: #1e293b; font-size: 1.5em;">Enter Password</h3>
+            <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; margin-bottom: 20px;">
+            <div style="display: flex; gap: 10px;">
+                <button onclick="submitPassword()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Unlock</button>
+                <button onclick="closePasswordModal()" style="flex: 1; padding: 12px; background: #e5e7eb; color: #64748b; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Cancel</button>
+            </div>
+            <p id="passwordError" style="color: #ef4444; margin-top: 15px; font-size: 14px; display: none;">Incorrect password. Try again.</p>
+        </div>
+    </div>
+</div>ml>
+<html lang="en">
+<head>
     <!-- 
     ========================================
     STABLE VERSION - Juna Fae November 2025 Report
@@ -699,14 +716,7 @@
     
         
         /* Edit Mode Styles */
-        #passwordModal {
-            display: none;
-        }
-        #passwordModal.active {
-            display: flex !important;
-        }
-        
-                .edit-lock {
+        .edit-lock {
             position: fixed; top: 20px; right: 20px; width: 40px; height: 40px;
             background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
             border-radius: 50%; cursor: pointer; z-index: 10000;
@@ -750,27 +760,16 @@
         </style>
 
 </head>
-<body class="">
+<body>
 
-<div class="edit-lock unlocked" onclick="promptPassword()"></div>
+<div class="edit-lock" onclick="promptPassword()"></div>
 <div class="edit-mode-banner">✏️ EDIT MODE - Click any text to edit</div>
-<div class="edit-controls active">
-    <button class="btn-save" onclick="saveAndDownload()">💾 Save &amp; Download</button>
+<div class="edit-controls">
+    <button class="btn-save" onclick="saveAndDownload()">💾 Save & Download</button>
     <button class="btn-exit" onclick="exitEditMode()">❌ Exit</button>
 </div>
 
-<!-- Password Modal -->
-<div id="passwordModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10001; align-items: center; justify-content: center;" class="">
-    <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 400px; width: 90%;">
-        <h3 style="margin: 0 0 20px 0; color: #1e293b; font-size: 1.5em;"><span class="editable-text">Enter Password</span></h3>
-        <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; margin-bottom: 20px;">
-        <div style="display: flex; gap: 10px;">
-            <button onclick="submitPassword()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Unlock</button>
-            <button onclick="closePasswordModal()" style="flex: 1; padding: 12px; background: #e5e7eb; color: #64748b; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Cancel</button>
-        </div>
-        <p id="passwordError" style="color: #ef4444; margin-top: 15px; font-size: 14px; display: none;"><span class="editable-text">Incorrect password. Try again.</span></p>
-    </div>
-</div>
+
 <div class="container">
         <div class="header">
             <div class="header-content">
@@ -974,13 +973,13 @@
                     </ul>
                 </div>
 
-                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;"><span class="editable-text">👥 Audience Demographics &amp; Performance</span></h3>
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;"><span class="editable-text">👥 Audience Demographics & Performance</span></h3>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
                         <thead>
                             <tr>
-                                <th>Age &amp; Gender Segment</th>
+                                <th>Age & Gender Segment</th>
                                 <th>Impressions</th>
                                 <th>Link Clicks</th>
                                 <th>CTR</th>
@@ -1047,7 +1046,7 @@
 
                 <div class="chart-container">
                     <div class="chart-title">Wedding Campaign - Audience Performance by Segment</div>
-                    <canvas id="weddingAudienceChart" style="display: block; box-sizing: border-box; height: 308px; width: 616px;" width="1232" height="616"></canvas>
+                    <canvas id="weddingAudienceChart"></canvas>
                 </div>
 
                 <div class="positive-indicator">
@@ -1100,7 +1099,7 @@
 
                 <div class="chart-container">
                     <div class="chart-title">Wedding Campaign - Geographic Distribution</div>
-                    <canvas id="weddingGeoChart" style="display: block; box-sizing: border-box; height: 320px; width: 616px;" width="1232" height="640"></canvas>
+                    <canvas id="weddingGeoChart"></canvas>
                 </div>
 
                 <div class="positive-indicator">
@@ -1210,7 +1209,7 @@
                 </div>
 
                 <div class="positive-indicator" style="margin-top: 30px;">
-                    <h4><span class="editable-text">✅ Creative Strategy Insights: Testimonials &amp; Product Stacks Win</span></h4>
+                    <h4><span class="editable-text">✅ Creative Strategy Insights: Testimonials & Product Stacks Win</span></h4>
                     <p><span class="highlight">"IMG5.1 - Testimonial"</span> is the volume leader with <strong><span class="editable-text">257 clicks and 85.21% LP view rate</span></strong>, generating 1 lead at €200 CPL. This proves testimonial-based content resonates strongly. <span class="highlight">"IMG1.1 - Stack"</span> achieved the <strong><span class="editable-text">campaign's best ROI with €81.45 cost per lead</span></strong>, demonstrating clean product photography converts efficiently. <span class="highlight">"IMG6 - The moment"</span> achieves the <strong><span class="editable-text">highest LP view rate at 87.74%</span></strong>, showing emotional couple imagery drives deep engagement. <span class="highlight">"VID3 - Testimonial"</span> proves video works with an exceptional <strong><span class="editable-text">90.62% LP view rate</span></strong> (highest in both campaigns), though volume remains limited. Collection ads drive clicks at low CPC but show significantly lower LP view rates, suggesting they attract browsers rather than serious buyers.</p>
                 </div>
 
@@ -1321,7 +1320,7 @@
                     <table class="comparison-table">
                         <thead>
                             <tr>
-                                <th>Age &amp; Gender</th>
+                                <th>Age & Gender</th>
                                 <th>Link Clicks</th>
                                 <th>CTR</th>
                                 <th>CPC</th>
@@ -1408,7 +1407,7 @@
 
                 <div class="chart-container">
                     <div class="chart-title">Geographic Distribution - Engagement Campaign</div>
-                    <canvas id="engagementGeoChart" style="display: block; box-sizing: border-box; height: 320px; width: 616px;" width="1232" height="640"></canvas>
+                    <canvas id="engagementGeoChart"></canvas>
                 </div>
 
                 <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;"><span class="editable-text">🎨 Creative Performance</span></h3>
@@ -1514,7 +1513,7 @@
 
                 <div class="chart-container">
                     <div class="chart-title">Engagement Campaign - Audience Performance</div>
-                    <canvas id="engagementAudienceChart" style="display: block; box-sizing: border-box; height: 308px; width: 616px;" width="1232" height="616"></canvas>
+                    <canvas id="engagementAudienceChart"></canvas>
                 </div>
 
                 <div class="positive-indicator" style="margin-top: 30px;">
@@ -1546,12 +1545,12 @@
 
                 <div class="chart-container">
                     <div class="chart-title">Volume Metrics Comparison: Wedding vs Engagement</div>
-                    <canvas id="campaignVolumeChart" style="display: block; box-sizing: border-box; height: 308px; width: 616px;" width="1232" height="616"></canvas>
+                    <canvas id="campaignVolumeChart"></canvas>
                 </div>
 
                 <div class="chart-container" style="margin-top: 35px;">
-                    <div class="chart-title">Efficiency Metrics Comparison: CTR &amp; CPC</div>
-                    <canvas id="campaignEfficiencyChart" style="display: block; box-sizing: border-box; height: 308px; width: 616px;" width="1232" height="616"></canvas>
+                    <div class="chart-title">Efficiency Metrics Comparison: CTR & CPC</div>
+                    <canvas id="campaignEfficiencyChart"></canvas>
                 </div>
 
                 
@@ -1582,9 +1581,9 @@
         <div class="footer">
             <p style="color: white;"><strong style="color: white;">Reporting Period:</strong> November 1-30, 2025 | Optimization Phase Complete</p>
             <p style="margin-top: 10px; color: white;"><span class="editable-text">📊 3 Leads Generated | €1,425.81 Total Investment | 67% Average LP View Rate</span></p>
-            <p style="margin-top: 15px; font-size: 0.95em; color: white;"><span class="editable-text">Questions about strategy or creative planning? Let's discuss next steps.</span></p>
+            <p style="margin-top: 15px; font-size: 0.95em; color: white;"><span class="editable-text">Questions about December strategy or Christmas creative planning? Let's discuss next steps.</span></p>
         </div>
-    
+    </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1869,23 +1868,23 @@
     var isEditMode = false;
     
     function promptPassword() {
-        console.log('promptPassword called');
-        
         if (isEditMode) {
-            console.log('Already in edit mode, exiting...');
             exitEditMode();
             return;
         }
         
-        // Show custom modal
+        // Show modal by changing display
         var modal = document.getElementById('passwordModal');
         var input = document.getElementById('passwordInput');
         var error = document.getElementById('passwordError');
         
-        modal.classList.add('active');
+        modal.style.display = 'block';
         error.style.display = 'none';
         input.value = '';
-        input.focus();
+        
+        setTimeout(function() {
+            input.focus();
+        }, 100);
         
         // Allow Enter key to submit
         input.onkeyup = function(e) {
@@ -1894,7 +1893,7 @@
     }
     
     function closePasswordModal() {
-        document.getElementById('passwordModal').classList.remove('active');
+        document.getElementById('passwordModal').style.display = 'none';
     }
     
     function submitPassword() {
@@ -1992,6 +1991,5 @@
     console.log('Lock element exists:', !!document.querySelector('.edit-lock'));
     
     </script>
-
-
-<div id="1p-live-region" role="status" aria-live="polite" aria-atomic="true" aria-relevant="all" style="clip: rect(0px, 0px, 0px, 0px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; overflow-wrap: normal;"></div></body></html>
+</body>
+</html>
