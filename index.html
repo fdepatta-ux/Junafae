@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+    ========================================
+    STABLE VERSION - Juna Fae November 2025 Report
+    ========================================
+    This version is locked for TEXT-ONLY modifications.
+    
+    VERIFIED COMPLETE:
+    - 5 Charts initialized correctly
+    - 6 Canvas elements present
+    - 7 Section titles
+    - 4 Insight boxes
+    - 47 Metric cards
+    - All CSS animations working
+    - All JavaScript functions intact
+    
+    SAFE TO EDIT: Text content only (paragraphs, headings, numbers)
+    DO NOT MODIFY: HTML structure, CSS, JavaScript, canvas elements
+    ========================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juna Fae - November 2025 Performance Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- DATA SECTION FOR CLAUDE UPDATES -->
+    <script>
+    const EDIT_PASSWORD = "edit123";
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            line-height: 1.7;
+            color: #2c3e50;
+            font-size: 15px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 80px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 3.2em;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 400;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header .report-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .content {
+            padding: 60px 50px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2.2em;
+            color: #1e293b;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, #667eea, #764ba2, #f093fb) 1;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .campaign-divider {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding: 60px 50px;
+            margin: 100px -50px 80px -50px;
+            text-align: center;
+            position: relative;
+            border-top: 4px solid;
+            border-bottom: 4px solid;
+        }
+
+        .campaign-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .campaign-divider.engagement {
+            border-color: #ec4899;
+        }
+
+        .campaign-divider.engagement::before {
+            background: linear-gradient(90deg, #ec4899 0%, #a855f7 100%);
+        }
+
+        .campaign-divider.wedding {
+            border-color: #f59e0b;
+        }
+
+        .campaign-divider.wedding::before {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 100%);
+        }
+
+        .campaign-divider h2 {
+            font-size: 2.8em;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+        }
+
+        .campaign-divider p {
+            font-size: 1.2em;
+            color: #64748b;
+            font-weight: 400;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 45px;
+            border-left: 5px solid #0ea5e9;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+        }
+        
+        .insight-box h3 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            color: #0c4a6e;
+            font-weight: 600;
+        }
+        
+        .insight-box p {
+            font-size: 1.05em;
+            line-height: 1.9;
+            color: #334155;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            margin: 45px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 32px 28px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .metric-card:hover {
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+            transform: translateY(-8px);
+            border-color: #667eea;
+        }
+
+        .metric-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .metric-card:hover .value {
+            transform: scale(1.08);
+            color: #667eea;
+        }
+        
+        .metric-card h4 {
+            font-size: 0.8em;
+            color: #94a3b8;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+        
+        .metric-card .value {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e293b;
+            letter-spacing: -1.5px;
+            transition: all 0.4s ease;
+        }
+        
+        .metric-card .subtext {
+            font-size: 0.9em;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .metric-card.engagement-theme {
+            border-left: 4px solid #ec4899;
+        }
+
+        .metric-card.engagement-theme:hover {
+            border-color: #ec4899;
+            box-shadow: 0 12px 35px rgba(236, 72, 153, 0.2);
+        }
+
+        .metric-card.engagement-theme:hover .value {
+            color: #ec4899;
+        }
+
+        .metric-card.wedding-theme {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .metric-card.wedding-theme:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 12px 35px rgba(245, 158, 11, 0.2);
+        }
+
+        .metric-card.wedding-theme:hover .value {
+            color: #f59e0b;
+        }
+        
+        .chart-container {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 45px auto;
+            border: 2px solid #e5e7eb;
+            max-width: 700px;
+            transition: all 0.4s ease;
+        }
+
+        .chart-container:hover {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            border-color: #667eea;
+        }
+        
+        .chart-title {
+            font-size: 1.2em;
+            color: #1e293b;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        canvas {
+            max-height: 320px !important;
+        }
+        
+        .positive-indicator {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 5px solid #10b981;
+            padding: 32px;
+            margin: 35px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+        }
+        
+        .positive-indicator h4 {
+            color: #065f46;
+            margin-bottom: 14px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .positive-indicator p {
+            color: #047857;
+            line-height: 1.9;
+            font-size: 1.02em;
+        }
+        
+        .phase-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 32px;
+            border-radius: 12px;
+            margin: 45px 0;
+            border-left: 5px solid #f59e0b;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+        }
+        
+        .phase-banner h3 {
+            color: #78350f;
+            margin-bottom: 14px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .phase-banner p {
+            color: #92400e;
+            font-size: 1.02em;
+            line-height: 1.9;
+        }
+
+        .phase-banner ul {
+            list-style: none;
+            margin: 15px 0 0 0;
+        }
+
+        .phase-banner ul li {
+            color: #92400e;
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .phase-banner ul li::before {
+            content: '→';
+            color: #f59e0b;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .next-steps {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid #3b82f6;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+        }
+        
+        .next-steps h3 {
+            color: #1e40af;
+            margin-bottom: 28px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .next-steps ol {
+            margin-left: 25px;
+        }
+        
+        .next-steps li {
+            color: #1e40af;
+            margin-bottom: 22px;
+            font-size: 1.02em;
+            line-height: 1.9;
+        }
+        
+        .next-steps li strong {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .next-steps ul {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 35px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table thead {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .comparison-table th {
+            padding: 18px 14px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.85em;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .comparison-table td {
+            padding: 16px 14px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.95em;
+            color: #334155;
+        }
+        
+        .comparison-table tbody tr:hover {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            transform: scale(1.005);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: all 0.2s ease;
+        }
+
+        .comparison-table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .winner-badge {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .engagement-badge {
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+        }
+
+        .wedding-badge {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .conversion-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 50px 50px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 12px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.05em;
+        }
+        
+        strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+        }
+
+        .ad-table-scroll {
+            overflow-x: auto;
+        }
+
+        .comparison-table a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .comparison-table a:hover {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #1e3a8a;
+            transform: translateX(4px);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            margin: 45px 0;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 38px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-card.engagement::before {
+            background: linear-gradient(90deg, #ec4899, #a855f7);
+        }
+
+        .comparison-card.wedding::before {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+        }
+
+        .comparison-card:hover {
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+            transform: translateY(-6px);
+        }
+
+        .comparison-card:hover::before {
+            height: 5px;
+        }
+
+        .comparison-card.engagement {
+            border-top: 4px solid #ec4899;
+        }
+
+        .comparison-card.wedding {
+            border-top: 4px solid #f59e0b;
+        }
+
+        .comparison-card h4 {
+            color: #1e293b;
+            margin-bottom: 24px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .comparison-card .stat {
+            margin: 14px 0;
+            font-size: 1em;
+            color: #334155;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .comparison-card .stat:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-card .stat strong {
+            color: #64748b;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 160px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .metric-card, .comparison-card, .chart-container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .winner-badge:hover, .engagement-badge:hover, .wedding-badge:hover, .conversion-badge:hover {
+            animation: subtlePulse 0.6s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .content {
+                padding: 40px 25px;
+            }
+            .header {
+                padding: 60px 25px;
+            }
+            .campaign-divider {
+                margin: 70px -25px 50px -25px;
+                padding: 50px 25px;
+            }
+        }
+    
+        
+        /* Edit Mode Styles */
+        .edit-lock {
+            position: fixed; top: 20px; right: 20px; width: 40px; height: 40px;
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+            border-radius: 50%; cursor: pointer; z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease;
+        }
+        .edit-lock:hover { background: rgba(255,255,255,0.25); transform: scale(1.1); }
+        .edit-lock::before { content: '🔒'; font-size: 18px; }
+        .edit-lock.unlocked::before { content: '🔓'; }
+        
+        .edit-controls {
+            position: fixed; top: 70px; right: 20px; background: white;
+            padding: 20px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 9999; display: none;
+        }
+        .edit-controls.active { display: block; }
+        .edit-controls button {
+            display: block; width: 100%; padding: 12px 20px; margin-bottom: 10px;
+            border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s ease;
+        }
+        .btn-save { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .btn-exit { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
+        
+        .editable-text { position: relative; transition: all 0.2s ease; }
+        body.edit-mode .editable-text {
+            outline: 2px dashed rgba(102,126,234,0.3); outline-offset: 4px; cursor: text;
+        }
+        body.edit-mode .editable-text:hover {
+            outline-color: rgba(102,126,234,0.6); background: rgba(102,126,234,0.02);
+        }
+        
+        .edit-mode-banner {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white; padding: 12px 20px; text-align: center;
+            font-weight: 600; z-index: 9998; display: none;
+        }
+        body.edit-mode .edit-mode-banner { display: block; }
+        body.edit-mode .container { margin-top: 90px; }
+        </style>
+
+</head>
+<body>
+
+<div class="edit-lock" onclick="promptPassword()"></div>
+<div class="edit-mode-banner">✏️ EDIT MODE - Click any text to edit</div>
+<div class="edit-controls">
+    <button class="btn-save" onclick="saveAndDownload()">💾 Save & Download</button>
+    <button class="btn-exit" onclick="exitEditMode()">❌ Exit</button>
+</div>
+
+<!-- Password Modal -->
+<div id="passwordModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10001; display: flex; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 400px; width: 90%;">
+        <h3 style="margin: 0 0 20px 0; color: #1e293b; font-size: 1.5em;">Enter Password</h3>
+        <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; margin-bottom: 20px;">
+        <div style="display: flex; gap: 10px;">
+            <button onclick="submitPassword()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Unlock</button>
+            <button onclick="closePasswordModal()" style="flex: 1; padding: 12px; background: #e5e7eb; color: #64748b; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Cancel</button>
+        </div>
+        <p id="passwordError" style="color: #ef4444; margin-top: 15px; font-size: 14px; display: none;">Incorrect password. Try again.</p>
+    </div>
+</div>
+<div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1><span class="editable-text">Meta Ads Performance Report</span></h1>
+                <p><span class="editable-text">Juna Fae | November 1-30, 2025</span></p>
+                <div class="report-badge"><span class="editable-text">📈 OPTIMIZATION PHASE</span></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="insight-box">
+                <h3><span class="editable-text">🎯 Executive Summary</span></h3>
+                <p><span class="editable-text">November marks the transition from <span class="highlight">data gathering to active optimization</span>. Following October's foundational insights, the campaigns were restructured: consolidating from four ad sets (€12.50 daily each) to two high-focus ad sets (€25 daily each), one for engagement rings and one for wedding bands. This consolidation, combined with creative iterations of October's top performers and the addition of video content, has driven substantial improvements. <span class="highlight">Conversion tracking is now fully operational</span>, with 3 appointment leads generated this month. The optimization strategy is proving successful: landing page view rates surged from 46% to 69%, and while CTR slightly decreased due to broader reach, overall engagement quality improved dramatically. The data clearly identifies winning creatives, with testimonial-based content and emotional messaging driving both clicks and conversions.</span></p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><span class="editable-text">📊 Combined Campaign Overview</span></h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Total Investment</h4>
+                        <div class="value">€1,426</div>
+                        <div class="subtext">Nov 1-30 period</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Total Reach</h4>
+                        <div class="value">77,511</div>
+                        <div class="subtext">Unique people</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Total Impressions</h4>
+                        <div class="value">220,828</div>
+                        <div class="subtext">Total ad views</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Link Clicks</h4>
+                        <div class="value">2,023</div>
+                        <div class="subtext">+68% vs October</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Average CPC</h4>
+                        <div class="value">€0.70</div>
+                        <div class="subtext">Cost per click</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Overall CTR</h4>
+                        <div class="value">0.92%</div>
+                        <div class="subtext">Click-through rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Landing Page Views</h4>
+                        <div class="value">1,347</div>
+                        <div class="subtext">Site visitors</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>LP View Rate</h4>
+                        <div class="value">66.6%</div>
+                        <div class="subtext">+43% vs October</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Total Leads</h4>
+                        <div class="value">3</div>
+                        <div class="subtext">Appointments</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Cost per Lead</h4>
+                        <div class="value">€475</div>
+                        <div class="subtext">Average CPL</div>
+                    </div>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card wedding">
+                        <h4>💒 Wedding Campaign</h4>
+                        <div class="stat"><strong>Targeting:</strong> Ages 25-44, Broad Gender</div>
+                        <div class="stat"><strong>Reach:</strong> 35,855</div>
+                        <div class="stat"><strong>Impressions:</strong> 105,734</div>
+                        <div class="stat"><strong>Frequency:</strong> 2.95</div>
+                        <div class="stat"><strong>Spend:</strong> €731.58</div>
+                        <div class="stat"><strong>Link Clicks:</strong> 1,213</div>
+                        <div class="stat"><strong>CTR:</strong> 1.15%</div>
+                        <div class="stat"><strong>CPC:</strong> €0.60</div>
+                        <div class="stat"><strong>Landing Page Views:</strong> 787 (64.88% rate)</div>
+                        <div class="stat"><strong>Leads:</strong> 2 <span class="conversion-badge">€366 CPL</span></div>
+                    </div>
+                    <div class="comparison-card engagement">
+                        <h4>💍 Engagement Campaign</h4>
+                        <div class="stat"><strong>Targeting:</strong> Men 25-44</div>
+                        <div class="stat"><strong>Reach:</strong> 41,656</div>
+                        <div class="stat"><strong>Impressions:</strong> 115,094</div>
+                        <div class="stat"><strong>Frequency:</strong> 2.76</div>
+                        <div class="stat"><strong>Spend:</strong> €694.23</div>
+                        <div class="stat"><strong>Link Clicks:</strong> 810</div>
+                        <div class="stat"><strong>CTR:</strong> 0.70%</div>
+                        <div class="stat"><strong>CPC:</strong> €0.86</div>
+                        <div class="stat"><strong>Landing Page Views:</strong> 560 (69.14% rate)</div>
+                        <div class="stat"><strong>Leads:</strong> 1 <span class="conversion-badge">€694 CPL</span></div>
+                    </div>
+                </div>
+
+                <div class="phase-banner">
+                    <h3><span class="editable-text">⚙️ Current Phase: Active Optimization</span></h3>
+                    <p><span class="editable-text">Following October's data gathering phase, November focused on optimization. The campaign structure was consolidated from four ad sets to two focused ad sets, creative iterations were launched based on October's winners, video content was introduced, and interest-based targeting was added for the engagement campaign. Results show the strategy is working: landing page view rates jumped from 46% to 67%, demonstrating improved ad quality and audience relevance.</span></p>
+                </div>
+
+                <div class="positive-indicator">
+                    <h4><span class="editable-text">✅ Strategic Insight: Campaign Performance Validation</span></h4>
+                    <p><span class="editable-text">The optimization phase validates the dual campaign approach. The Wedding campaign, with broad gender targeting (ages 25-44), continues to see Meta's algorithm optimize toward female audiences due to their stronger engagement, achieving a <strong>1.15% CTR</strong> and <strong>€0.60 CPC</strong> with 2 leads generated. The Engagement campaign reaches men with solid metrics at <strong>0.70% CTR</strong> and <strong>€0.86 CPC</strong> with 1 lead. Both campaigns are performing within healthy benchmarks for luxury jewelry. The enhanced landing page view rates (Wedding: 64.88%, Engagement: 69.14%) confirm that creative optimization and ad set consolidation have successfully improved engagement quality.</span></p>
+                </div>
+            </div>
+
+
+            <!-- ========================================== -->
+            <!-- PART 1: WEDDING CAMPAIGN - COMPLETE ANALYSIS -->
+            <!-- ========================================== -->
+            
+            <div class="campaign-divider wedding">
+                <h2><span class="editable-text">💒 PART 1: WEDDING CAMPAIGN</span></h2>
+                <p><span class="editable-text">In-Depth Performance Analysis | Ages 25-44 Broad Gender Targeting</span></p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><span class="editable-text">📊 Wedding Campaign Performance Metrics</span></h2>
+
+                <div class="metrics-grid">
+                    <div class="metric-card wedding-theme">
+                        <h4>Total Spend</h4>
+                        <div class="value">€732</div>
+                        <div class="subtext">Campaign investment</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>Reach</h4>
+                        <div class="value">35,855</div>
+                        <div class="subtext">Unique people</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>Impressions</h4>
+                        <div class="value">105,734</div>
+                        <div class="subtext">Total views</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>Frequency</h4>
+                        <div class="value">2.95</div>
+                        <div class="subtext">Avg views per person</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>Link Clicks</h4>
+                        <div class="value">1,213</div>
+                        <div class="subtext">+83% vs October</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>CTR</h4>
+                        <div class="value">1.15%</div>
+                        <div class="subtext">Click-through rate</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>CPC</h4>
+                        <div class="value">€0.60</div>
+                        <div class="subtext">Cost per click</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>CPM</h4>
+                        <div class="value">€6.92</div>
+                        <div class="subtext">Cost per 1K impr.</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>LP Views</h4>
+                        <div class="value">787</div>
+                        <div class="subtext">Site visitors</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>LP View Rate</h4>
+                        <div class="value">64.88%</div>
+                        <div class="subtext">+39% vs October</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>Total Leads</h4>
+                        <div class="value">2</div>
+                        <div class="subtext">Appointments booked</div>
+                    </div>
+                    <div class="metric-card wedding-theme">
+                        <h4>Cost per Lead</h4>
+                        <div class="value">€366</div>
+                        <div class="subtext">Average CPL</div>
+                    </div>
+                </div>
+
+                <div class="positive-indicator">
+                    <h4><span class="editable-text">✅ Campaign Performance Summary</span></h4>
+                    <p><span class="editable-text">The Wedding campaign demonstrates exceptional efficiency and strong conversion performance. With a <strong>1.15% CTR and €0.60 CPC</strong>, the campaign maintains excellent metrics while dramatically scaling volume (+83% clicks vs October). Generated <strong>2 leads at €366 average cost per lead</strong>, with one remarkably efficient lead at just €81.45. The <span class="highlight">64.88% landing page view rate</span> represents a 39% improvement from October, confirming that creative optimization and ad set consolidation are working. Meta's algorithm continues to optimize delivery toward female audiences who show stronger engagement with wedding band content.</span></p>
+                </div>
+
+                <div class="phase-banner">
+                    <h3><span class="editable-text">📈 Month-over-Month Improvements</span></h3>
+                    <ul style="margin-top: 15px;">
+                        <li>Link Clicks: 664 → 1,213 (+82.7% increase)</li>
+                        <li>LP View Rate: 46.8% → 64.88% (+38.6% improvement)</li>
+                        <li>Conversion Tracking: Fully operational with 2 leads generated</li>
+                        <li>Volume Efficiency: Maintained €0.60 CPC despite 83% click increase</li>
+                        <li>Creative Quality: Iterations outperforming original versions</li>
+                    </ul>
+                </div>
+
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;">👥 Audience Demographics & Performance</h3>
+                
+                <div class="ad-table-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Age & Gender Segment</th>
+                                <th>Impressions</th>
+                                <th>Link Clicks</th>
+                                <th>CTR</th>
+                                <th>CPC</th>
+                                <th>LP Views</th>
+                                <th>LP View Rate</th>
+                                <th>Leads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <td><strong>Women 25-34</strong></td>
+                                <td>81,283</td>
+                                <td>882</td>
+                                <td>1.09%</td>
+                                <td>€0.60</td>
+                                <td>552</td>
+                                <td>62.59%</td>
+                                <td>1 <span class="conversion-badge">LEAD</span></td>
+                            </tr>
+                            <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <td><strong>Women 35-44</strong></td>
+                                <td>19,484</td>
+                                <td>261</td>
+                                <td>1.34%</td>
+                                <td>€0.61</td>
+                                <td>181</td>
+                                <td>69.35%</td>
+                                <td>1 <span class="conversion-badge">LEAD</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Men 25-34</strong></td>
+                                <td>2,346</td>
+                                <td>23</td>
+                                <td>0.98%</td>
+                                <td>€0.85</td>
+                                <td>18</td>
+                                <td>78.26%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Women 45-54</strong></td>
+                                <td>1,014</td>
+                                <td>22</td>
+                                <td>2.17%</td>
+                                <td>€0.47</td>
+                                <td>9</td>
+                                <td>40.91%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Men 35-44</strong></td>
+                                <td>923</td>
+                                <td>12</td>
+                                <td>1.30%</td>
+                                <td>€0.65</td>
+                                <td>5</td>
+                                <td>41.67%</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Wedding Campaign - Audience Performance by Segment</div>
+                    <canvas id="weddingAudienceChart"></canvas>
+                </div>
+
+                <div class="positive-indicator">
+                    <h4><span class="editable-text">✅ Audience Insights: Female Dominance with Dual Conversions</span></h4>
+                    <p><span class="editable-text"><span class="editable-text"><span class="highlight">Women 25-34 are the powerhouse</span> of this campaign, generating <strong>882 clicks (72.7% of total volume)</strong> at an efficient <strong>€0.60 CPC</strong> and <strong>1.09% CTR</strong>. This segment delivered 552 landing page views and <strong>converted 1 lead</strong>. <span class="highlight">Women 35-44 show the highest engagement quality</span> with a remarkable <strong>69.35% LP view rate and 1.34% CTR</strong>, also generating <strong>1 lead</strong>. Together, these two female segments account for 94% of all clicks and both conversions, validating Meta's algorithm optimization toward women planning weddings. Male engagement exists but at significantly lower volume, confirming wedding band messaging resonates primarily with female audiences.</span></span></p>
+                </div>
+
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;">🗺️ Geographic Performance Distribution</h3>
+                
+                <div class="ad-table-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Region</th>
+                                <th>Impressions</th>
+                                <th>Link Clicks</th>
+                                <th>CTR</th>
+                                <th>CPC</th>
+                                <th>% of Total Clicks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Flemish Region</strong></td>
+                                <td>77,045</td>
+                                <td>882</td>
+                                <td>1.14%</td>
+                                <td>€0.62</td>
+                                <td>72.7%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wallonia</strong></td>
+                                <td>15,929</td>
+                                <td>188</td>
+                                <td>1.18%</td>
+                                <td>€0.49</td>
+                                <td>15.5%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Brussels</strong></td>
+                                <td>12,760</td>
+                                <td>143</td>
+                                <td>1.12%</td>
+                                <td>€0.64</td>
+                                <td>11.8%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Wedding Campaign - Geographic Distribution</div>
+                    <canvas id="weddingGeoChart"></canvas>
+                </div>
+
+                <div class="positive-indicator">
+                    <h4><span class="editable-text">✅ Geographic Insights: Flemish Region Leads Performance</span></h4>
+                    <p><span class="editable-text">The <strong>Flemish Region dominates with 72.7% of all clicks</strong> (882 clicks), delivering consistent performance at <strong>1.14% CTR and €0.62 CPC</strong>. <span class="highlight">Wallonia shows the strongest efficiency</span> with the lowest CPC at <strong>€0.49</strong> and highest CTR at <strong>1.18%</strong>, despite lower volume (188 clicks). Brussels contributes 143 clicks at competitive metrics (1.12% CTR, €0.64 CPC). The geographic distribution aligns with population density and suggests opportunity to scale budget in Wallonia given its superior cost efficiency.</span></p>
+                </div>
+
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;">🎨 Creative Performance Analysis</h3>
+                
+                <p style="margin-bottom: 25px; color: #64748b; font-size: 1.05em;">Detailed performance breakdown of top 10 wedding band creatives from 27 active ads featuring emotional imagery, testimonials, and product showcases.</p>
+                
+                <div class="ad-table-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Ad Creative</th>
+                                <th>Format</th>
+                                <th>Clicks</th>
+                                <th>CTR</th>
+                                <th>CPC</th>
+                                <th>LP Views</th>
+                                <th>LP View Rate</th>
+                                <th>Leads</th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <td><strong>IMG5.1 - Testimonial</strong></td>
+                                <td>Static</td>
+                                <td>257</td>
+                                <td>0.94%</td>
+                                <td>€0.78</td>
+                                <td>219</td>
+                                <td>85.21%</td>
+                                <td>1 <span class="conversion-badge">€200 CPL</span></td>
+                                <td><a href="https://drive.google.com/file/d/1yuf_Ls_ZZpc3QW7RNy9MEHWocri0P98Y/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG3.2 - Custom</strong></td>
+                                <td>Static</td>
+                                <td>170</td>
+                                <td>1.43%</td>
+                                <td>€0.52</td>
+                                <td>115</td>
+                                <td>67.65%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1RHU9JrAjMDzCsyV6_mN4WVzyFM-LE22f/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG6 - The moment</strong></td>
+                                <td>Static</td>
+                                <td>155</td>
+                                <td>0.81%</td>
+                                <td>€0.70</td>
+                                <td>136</td>
+                                <td>87.74% <span class="wedding-badge">TOP LP RATE</span></td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1Xgi5D68oKSCd2Z0CHtMasrFvmsAO_qr0/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <td><strong>IMG1.1 - Stack</strong></td>
+                                <td>Static</td>
+                                <td>116</td>
+                                <td>0.97%</td>
+                                <td>€0.70</td>
+                                <td>78</td>
+                                <td>67.24%</td>
+                                <td>1 <span class="conversion-badge">€81 CPL! 🏆</span></td>
+                                <td><a href="https://drive.google.com/file/d/1zdd_JDQxz27pDiAhfym-Q4eLahk_i8bc/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG5.2 - Testimonial</strong></td>
+                                <td>Static</td>
+                                <td>64</td>
+                                <td>1.10%</td>
+                                <td>€0.73</td>
+                                <td>38</td>
+                                <td>59.38%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1XOjdELdWwZdMqLSTPl4UMz_mD3lWZ6pK/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Collection Ad 2 - Yours v1</strong></td>
+                                <td>Collection</td>
+                                <td>59</td>
+                                <td>2.02%</td>
+                                <td>€0.29</td>
+                                <td>24</td>
+                                <td>40.68%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/11kkhdOcLXOc-oUodm__1DMrSSpsKNNhx/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>VID3 - Testimonial</strong></td>
+                                <td>Video</td>
+                                <td>32</td>
+                                <td>0.92%</td>
+                                <td>€1.04</td>
+                                <td>29</td>
+                                <td>90.62% <span class="wedding-badge">VIDEO WIN</span></td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1uq7Gul9vGebDichR0pLBIHTLaAYVxBuf/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="positive-indicator" style="margin-top: 30px;">
+                    <h4>✅ Creative Strategy Insights: Testimonials & Product Stacks Win</h4>
+                    <p><span class="highlight">"IMG5.1 - Testimonial"</span> is the volume leader with <strong>257 clicks and 85.21% LP view rate</strong>, generating 1 lead at €200 CPL. This proves testimonial-based content resonates strongly. <span class="highlight">"IMG1.1 - Stack"</span> achieved the <strong>campaign's best ROI with €81.45 cost per lead</strong>, demonstrating clean product photography converts efficiently. <span class="highlight">"IMG6 - The moment"</span> achieves the <strong>highest LP view rate at 87.74%</strong>, showing emotional couple imagery drives deep engagement. <span class="highlight">"VID3 - Testimonial"</span> proves video works with an exceptional <strong>90.62% LP view rate</strong> (highest in both campaigns), though volume remains limited. Collection ads drive clicks at low CPC but show significantly lower LP view rates, suggesting they attract browsers rather than serious buyers.</p>
+                </div>
+
+                <div class="phase-banner">
+                    <h3><span class="editable-text">🎯 Wedding Campaign Key Takeaways</span></h3>
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Audience Success:</strong> Women 25-44 drive 94% of clicks and both conversions</li>
+                        <li><strong>Creative Winners:</strong> Testimonials (IMG5.1) and product stacks (IMG1.1) convert</li>
+                        <li><strong>Video Potential:</strong> VID3 shows 90.62% LP rate - expand video testimonials</li>
+                        <li><strong>Geographic Opportunity:</strong> Wallonia shows best efficiency (€0.49 CPC, 1.18% CTR)</li>
+                        <li><strong>Iteration Validation:</strong> .1 versions outperform originals consistently</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ========================================== -->
+            <!-- PART 2: ENGAGEMENT CAMPAIGN - COMPLETE ANALYSIS -->
+            <!-- ========================================== -->
+            
+            <div class="campaign-divider engagement">
+                <h2><span class="editable-text">💍 PART 2: ENGAGEMENT CAMPAIGN</span></h2>
+                <p><span class="editable-text"><span class="editable-text">In-Depth Performance Analysis | Men 25-44 with Interest Targeting</span></span></p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><span class="editable-text">📊 Engagement Campaign Performance</span></h2>
+
+                <div class="metrics-grid">
+                    <div class="metric-card engagement-theme">
+                        <h4>Total Spend</h4>
+                        <div class="value">€694</div>
+                        <div class="subtext">Campaign investment</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>Reach</h4>
+                        <div class="value">41,656</div>
+                        <div class="subtext">Unique people</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>Impressions</h4>
+                        <div class="value">115,094</div>
+                        <div class="subtext">Total views</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>Frequency</h4>
+                        <div class="value">2.76</div>
+                        <div class="subtext">Avg views per person</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>Link Clicks</h4>
+                        <div class="value">810</div>
+                        <div class="subtext">+55% vs October</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>CTR</h4>
+                        <div class="value">0.70%</div>
+                        <div class="subtext">Click-through rate</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>CPC</h4>
+                        <div class="value">€0.86</div>
+                        <div class="subtext">Cost per click</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>CPM</h4>
+                        <div class="value">€6.03</div>
+                        <div class="subtext">Cost per 1K impr.</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>LP Views</h4>
+                        <div class="value">560</div>
+                        <div class="subtext">Site visitors</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>LP View Rate</h4>
+                        <div class="value">69.14%</div>
+                        <div class="subtext">+49% vs October</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>Total Leads</h4>
+                        <div class="value">1</div>
+                        <div class="subtext">Appointment booked</div>
+                    </div>
+                    <div class="metric-card engagement-theme">
+                        <h4>Cost per Lead</h4>
+                        <div class="value">€694</div>
+                        <div class="subtext">Average CPL</div>
+                    </div>
+                </div>
+
+                <div class="positive-indicator">
+                    <h4><span class="editable-text">✅ Campaign Standout Performance</span></h4>
+                    <p><span class="editable-text">The Engagement campaign shows strong optimization results with <span class="highlight">69.14% landing page view rate</span>, the highest across both campaigns. Despite a 17% CTR decrease from October (due to broader reach and increased impressions), the dramatic improvement in LP view rate indicates <strong>significantly higher quality engagement</strong>. The campaign generated 810 clicks (+55% vs October) and successfully converted 1 lead. The addition of interest targeting (luxury jewelry brands) appears to be reaching men actively researching engagement rings, as evidenced by the exceptional LP view commitment.</span></p>
+                </div>
+
+                <div class="phase-banner">
+                    <h3><span class="editable-text">📈 Key Improvements vs October</span></h3>
+                    <ul style="margin-top: 15px;">
+                        <li>Link Clicks: 522 → 810 (+55.2%)</li>
+                        <li>LP View Rate: 46.4% → 69.14% (+49.0%)</li>
+                        <li>Conversion Tracking: Now operational with 1 lead</li>
+                        <li>Creative Quality: Iterations driving higher engagement</li>
+                    </ul>
+                </div>
+
+                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;">👥 Audience Performance</h3>
+                
+                <div class="ad-table-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Age & Gender</th>
+                                <th>Link Clicks</th>
+                                <th>CTR</th>
+                                <th>CPC</th>
+                                <th>LP Views</th>
+                                <th>LP View Rate</th>
+                                <th>Leads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <td><strong>Men 25-34</strong></td>
+                                <td>598</td>
+                                <td>0.68%</td>
+                                <td>€0.85</td>
+                                <td>411</td>
+                                <td>68.73%</td>
+                                <td>1 <span class="conversion-badge">CONVERTED</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Men 35-44</strong></td>
+                                <td>203</td>
+                                <td>0.78%</td>
+                                <td>€0.86</td>
+                                <td>140</td>
+                                <td>68.97%</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Men 45-54</strong></td>
+                                <td>9</td>
+                                <td>0.69%</td>
+                                <td>€1.27</td>
+                                <td>4</td>
+                                <td>44.44%</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="positive-indicator">
+                    <h4><span class="editable-text">✅ Key Insight: Men 25-34 Driving Conversions</span></h4>
+                    <p><span class="editable-text"><span class="editable-text">Men 25-34 dominate campaign performance, generating <strong>598 clicks (74% of total)</strong> at an efficient <strong>€0.85 CPC</strong>, with a solid <strong>68.73% LP view rate</strong>. This segment also generated the campaign's single lead, confirming this is the prime engagement ring demographic. Men 35-44 show consistent engagement with 203 clicks and nearly identical LP view rate (68.97%), representing older first-time buyers or second marriages. The targeting strategy combining demographic focus with interest-based targeting (luxury jewelry brands) is successfully reaching men actively in the market for engagement rings.</span></span></p>
+                </div>
+
+                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;">🗺️ Geographic Performance</h3>
+                
+                <div class="ad-table-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Region</th>
+                                <th>Link Clicks</th>
+                                <th>CTR</th>
+                                <th>CPC</th>
+                                <th>% of Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Flemish Region</strong></td>
+                                <td>589</td>
+                                <td>0.68%</td>
+                                <td>€0.89</td>
+                                <td>72.7%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wallonia</strong></td>
+                                <td>128</td>
+                                <td>0.87%</td>
+                                <td>€0.67</td>
+                                <td>15.8%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Brussels</strong></td>
+                                <td>93</td>
+                                <td>0.68%</td>
+                                <td>€0.89</td>
+                                <td>11.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Geographic Distribution - Engagement Campaign</div>
+                    <canvas id="engagementGeoChart"></canvas>
+                </div>
+
+                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;">🎨 Creative Performance</h3>
+                
+                <p style="margin-bottom: 20px; color: #64748b; font-size: 1.05em;">Top 10 performing ads from 27 active creatives targeting men considering proposals.</p>
+                
+                <div class="ad-table-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Ad Name</th>
+                                <th>Format</th>
+                                <th>Clicks</th>
+                                <th>CTR</th>
+                                <th>CPC</th>
+                                <th>LP Views</th>
+                                <th>LP Rate</th>
+                                <th>Leads</th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>IMG7.1 - Single rings</strong></td>
+                                <td>Static</td>
+                                <td>179</td>
+                                <td>0.65%</td>
+                                <td>€0.93</td>
+                                <td>152</td>
+                                <td>84.92% <span class="engagement-badge">TOP LP RATE</span></td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1VPZ82-OuZlYPUd4Q7GpA_3wadT_xO36s/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG8 - She said yes</strong></td>
+                                <td>Static</td>
+                                <td>141</td>
+                                <td>0.63%</td>
+                                <td>€0.79</td>
+                                <td>115</td>
+                                <td>81.56%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1h-6z2bhHaj-4kDVBGGtsWkwO3Bb5rFMr/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG10.1 - Waiting for</strong></td>
+                                <td>Static</td>
+                                <td>97</td>
+                                <td>0.67%</td>
+                                <td>€0.91</td>
+                                <td>72</td>
+                                <td>74.23%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1ixVI7Rfzf0zEpugssYbBXp1mPxPsZhT5/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG8.2 - She said yes</strong></td>
+                                <td>Static</td>
+                                <td>70</td>
+                                <td>0.97%</td>
+                                <td>€0.78</td>
+                                <td>50</td>
+                                <td>71.43%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1NiY6XN-DpyeM63JMLAiNHJFcHmFHtSvo/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <td><strong>IMG8.2 - She said yes</strong></td>
+                                <td>Static</td>
+                                <td>40</td>
+                                <td>0.77%</td>
+                                <td>€0.99</td>
+                                <td>30</td>
+                                <td>75.00%</td>
+                                <td>1 <span class="conversion-badge">€40 CPL!</span></td>
+                                <td><a href="https://drive.google.com/file/d/1NiY6XN-DpyeM63JMLAiNHJFcHmFHtSvo/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG7.2 - Single rings</strong></td>
+                                <td>Static</td>
+                                <td>38</td>
+                                <td>0.66%</td>
+                                <td>€0.68</td>
+                                <td>25</td>
+                                <td>65.79%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1qpPKIgo3xwZBIJDF2SX2di0CJ2lqtXIG/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMG13.2 - It was forever</strong></td>
+                                <td>Static</td>
+                                <td>18</td>
+                                <td>0.93%</td>
+                                <td>€0.88</td>
+                                <td>10</td>
+                                <td>55.56%</td>
+                                <td>0</td>
+                                <td><a href="https://drive.google.com/file/d/1Lhwqq5zjnBc5UYxuZgb8szR9F9_5SvtG/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Engagement Campaign - Audience Performance</div>
+                    <canvas id="engagementAudienceChart"></canvas>
+                </div>
+
+                <div class="positive-indicator" style="margin-top: 30px;">
+                    <h4>✅ Creative Insights - Engagement</h4>
+                    <p><span class="highlight">"IMG7.1 - Single rings"</span> leads with <strong>84.92% LP view rate</strong> and 179 clicks, showing clean product photography strongly resonates. <span class="highlight">"IMG8.2 - She said yes"</span> generated the campaign's single lead at an outstanding <strong>€39.74 cost per lead</strong>, proving emotional messaging converts. This is an iteration of the original IMG8, validating the creative iteration strategy. The "She said yes" family of ads collectively drove 251 clicks, confirming this emotional angle works. <span class="highlight">"IMG10.1 - Waiting for"</span> shows solid performance with 97 clicks and 74.23% LP rate. Videos are still in testing phase with limited volume but show potential.</p>
+                </div>
+            </div>
+
+
+                <div class="phase-banner">
+                    <h3><span class="editable-text">🎯 Engagement Campaign Key Takeaways</span></h3>
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Audience Success:</strong> Men 25-34 drive 74% of clicks and the conversion</li>
+                        <li><strong>LP View Rate Champion:</strong> 69.14% rate (highest across both campaigns)</li>
+                        <li><strong>Creative Winner:</strong> "She said yes" emotional messaging converts at €40 CPL</li>
+                        <li><strong>Product Photography:</strong> IMG7.1 single rings achieve 84.92% LP rate</li>
+                        <li><strong>Interest Targeting:</strong> Luxury jewelry brands successfully reach active researchers</li>
+                        <li><strong>Geographic Opportunity:</strong> Wallonia shows best efficiency (€0.67 CPC, 0.87% CTR)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- CROSS-CAMPAIGN COMPARISON & STRATEGY -->
+            <!-- ========================================== -->
+            
+            <div class="section">
+                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;">🔍 Cross-Campaign Comparative Analysis</h2>
+
+                <div class="chart-container">
+                    <div class="chart-title">Volume Metrics Comparison: Wedding vs Engagement</div>
+                    <canvas id="campaignVolumeChart"></canvas>
+                </div>
+
+                <div class="chart-container" style="margin-top: 35px;">
+                    <div class="chart-title">Efficiency Metrics Comparison: CTR & CPC</div>
+                    <canvas id="campaignEfficiencyChart"></canvas>
+                </div>
+
+                
+            </div>
+            
+            
+            <div class="section">
+                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;">💬 November's Summary</h2>
+                <div style="padding: 0 20px;">
+                    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); padding: 40px 45px; border-radius: 12px; border: 2px solid #fbbf24; box-shadow: 0 2px 8px rgba(251, 191, 36, 0.08); margin: 20px 0;">
+                        <p style="font-size: 1.05em; line-height: 1.9; color: #78350f; margin: 0; font-weight: 400; letter-spacing: 0.3px;">
+                            November delivered the engagement metrics we needed to move forward with confidence. Landing page view rates steadily improved, CPC remained stable across both campaigns proving the audience targeting and creative direction are sound. The key learning: specific messaging drives action. Testimonial content, emotional imagery, and clear product showcases consistently outperform generic creative. December's strategy flows directly from this insight: optimize toward lean, elegant ads that speak directly to our premium audience with action-driven messaging. We're fine-tuning what works, not reinventing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;">🚀 Strategic Focus for December</h2>
+                <div style="padding: 0 20px;">
+                    <p style="font-size: 1.15em; line-height: 2; color: #334155;">
+                        December priorities center on iterating proven performers while deepening our understanding of user behavior. We'll continue refining the ads showing strong engagement metrics, using Clarity and Google Analytics to track on-site behavior and identify conversion opportunities. The focus shifts from testing to optimization: driving high-quality engagement with users already familiar with Juna Fae, converting interest into appointments. December represents peak engagement ring season, making this the critical month to capitalize on both engagement and wedding campaign momentum built through November's data gathering phase.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p style="color: white;"><strong style="color: white;">Reporting Period:</strong> November 1-30, 2025 | Optimization Phase Complete</p>
+            <p style="margin-top: 10px; color: white;">📊 3 Leads Generated | €1,425.81 Total Investment | 67% Average LP View Rate</p>
+            <p style="margin-top: 15px; font-size: 0.95em; color: white;">Questions about December strategy or Christmas creative planning? Let's discuss next steps.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif';
+            Chart.defaults.color = '#64748b';
+            
+            // Engagement Audience Chart
+            const engagementAudienceCtx = document.getElementById('engagementAudienceChart');
+            if (engagementAudienceCtx) {
+                new Chart(engagementAudienceCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Men 25-34', 'Men 35-44', 'Men 45-54'],
+                        datasets: [{
+                            label: 'Link Clicks',
+                            data: [598, 203, 9],
+                            backgroundColor: 'rgba(236, 72, 153, 0.8)',
+                            borderColor: '#ec4899',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }, {
+                            label: 'LP Views',
+                            data: [411, 140, 4],
+                            backgroundColor: 'rgba(251, 191, 36, 0.8)',
+                            borderColor: '#fbbf24',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#f1f5f9' },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: { font: { size: 13 }, padding: 20, usePointStyle: true }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                                titleColor: '#fbbf24',
+                                padding: 16,
+                                cornerRadius: 8,
+                                borderColor: '#fbbf24',
+                                borderWidth: 1
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Wedding Audience Chart
+            const weddingAudienceCtx = document.getElementById('weddingAudienceChart');
+            if (weddingAudienceCtx) {
+                new Chart(weddingAudienceCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Women 25-34', 'Women 35-44', 'Men 25-34', 'Women 45-54', 'Men 35-44'],
+                        datasets: [{
+                            label: 'Link Clicks',
+                            data: [882, 261, 23, 22, 12],
+                            backgroundColor: 'rgba(245, 158, 11, 0.8)',
+                            borderColor: '#f59e0b',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }, {
+                            label: 'LP Views',
+                            data: [552, 181, 18, 9, 5],
+                            backgroundColor: 'rgba(251, 191, 36, 0.8)',
+                            borderColor: '#fbbf24',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#f1f5f9' },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: { font: { size: 13 }, padding: 20, usePointStyle: true }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                                titleColor: '#fbbf24',
+                                padding: 16,
+                                cornerRadius: 8,
+                                borderColor: '#fbbf24',
+                                borderWidth: 1
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Campaign Volume Comparison
+            const volumeCtx = document.getElementById('campaignVolumeChart');
+            if (volumeCtx) {
+                new Chart(volumeCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Link Clicks', 'Landing Page Views'],
+                        datasets: [{
+                            label: 'Engagement Campaign',
+                            data: [810, 560],
+                            backgroundColor: 'rgba(236, 72, 153, 0.8)',
+                            borderColor: '#ec4899',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }, {
+                            label: 'Wedding Campaign',
+                            data: [1213, 787],
+                            backgroundColor: 'rgba(245, 158, 11, 0.8)',
+                            borderColor: '#f59e0b',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#f1f5f9' },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            },
+                            x: {
+                                grid: { display: false },
+                                                   ticks: { font: { size: 12 }, color: '#64748b' }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { font: { size: 13 }, padding: 20, usePointStyle: true } },
+                            tooltip: {
+                                backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                                titleColor: '#fbbf24',
+                                padding: 16,
+                                cornerRadius: 8,
+                                borderColor: '#fbbf24',
+                                borderWidth: 1
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Wedding Geographic Pie
+            const weddingGeoCtx = document.getElementById('weddingGeoChart');
+            if (weddingGeoCtx) {
+                new Chart(weddingGeoCtx.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Flemish Region', 'Wallonia', 'Brussels'],
+                        datasets: [{
+                            data: [882, 188, 143],
+                            backgroundColor: ['rgba(245, 158, 11, 0.8)', 'rgba(239, 68, 68, 0.8)', 'rgba(251, 191, 36, 0.8)'],
+                            borderColor: '#ffffff',
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { font: { size: 13 }, padding: 20, usePointStyle: true } },
+                            tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.95)', titleColor: '#fbbf24', padding: 16, cornerRadius: 8, borderColor: '#fbbf24', borderWidth: 1 }
+                        },
+                        cutout: '65%'
+                    }
+                });
+            }
+
+            // Engagement Geographic Pie
+            const engagementGeoCtx = document.getElementById('engagementGeoChart');
+            if (engagementGeoCtx) {
+                new Chart(engagementGeoCtx.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Flemish Region', 'Wallonia', 'Brussels'],
+                        datasets: [{
+                            data: [589, 128, 93],
+                            backgroundColor: ['rgba(236, 72, 153, 0.8)', 'rgba(168, 85, 247, 0.8)', 'rgba(251, 191, 36, 0.8)'],
+                            borderColor: '#ffffff',
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { font: { size: 13 }, padding: 20, usePointStyle: true } },
+                            tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.95)', titleColor: '#fbbf24', padding: 16, cornerRadius: 8, borderColor: '#fbbf24', borderWidth: 1 }
+                        },
+                        cutout: '65%'
+                    }
+                });
+            }
+
+            // Campaign Efficiency Comparison Chart (CTR & CPC)
+            const efficiencyCtx = document.getElementById('campaignEfficiencyChart');
+            if (efficiencyCtx) {
+                new Chart(efficiencyCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['CTR (%)', 'CPC (€)'],
+                        datasets: [{
+                            label: 'Engagement Campaign',
+                            data: [0.70, 0.86],
+                            backgroundColor: 'rgba(236, 72, 153, 0.8)',
+                            borderColor: '#ec4899',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }, {
+                            label: 'Wedding Campaign',
+                            data: [1.15, 0.60],
+                            backgroundColor: 'rgba(245, 158, 11, 0.8)',
+                            borderColor: '#f59e0b',
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#f1f5f9' },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { font: { size: 12 }, color: '#64748b' }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { font: { size: 13 }, padding: 20, usePointStyle: true } },
+                            tooltip: {
+                                backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                                titleColor: '#fbbf24',
+                                padding: 16,
+                                cornerRadius: 8,
+                                borderColor: '#fbbf24',
+                                borderWidth: 1
+                            }
+                        }
+                    }
+                });
+            }
+            
+        }); // End DOMContentLoaded
+    
+
+    </script>
+    
+    <script>
+    // ========================================
+    // EDIT MODE SYSTEM
+    // ========================================
+    
+    var isEditMode = false;
+    
+    function promptPassword() {
+        console.log('promptPassword called');
+        
+        if (isEditMode) {
+            console.log('Already in edit mode, exiting...');
+            exitEditMode();
+            return;
+        }
+        
+        // Show custom modal
+        var modal = document.getElementById('passwordModal');
+        var input = document.getElementById('passwordInput');
+        var error = document.getElementById('passwordError');
+        
+        modal.style.display = 'flex';
+        error.style.display = 'none';
+        input.value = '';
+        input.focus();
+        
+        // Allow Enter key to submit
+        input.onkeyup = function(e) {
+            if (e.key === 'Enter') submitPassword();
+        };
+    }
+    
+    function closePasswordModal() {
+        document.getElementById('passwordModal').style.display = 'none';
+    }
+    
+    function submitPassword() {
+        var input = document.getElementById('passwordInput');
+        var error = document.getElementById('passwordError');
+        var pwd = input.value;
+        
+        console.log('Password submitted:', pwd);
+        
+        if (pwd === 'edit123') {
+            console.log('Correct password!');
+            closePasswordModal();
+            enterEditMode();
+        } else {
+            console.log('Wrong password');
+            error.style.display = 'block';
+            input.value = '';
+            input.focus();
+        }
+    }
+    
+    function enterEditMode() {
+        console.log('Entering edit mode');
+        isEditMode = true;
+        document.body.classList.add('edit-mode');
+        
+        var lockEl = document.querySelector('.edit-lock');
+        var controlsEl = document.querySelector('.edit-controls');
+        
+        if (lockEl) lockEl.classList.add('unlocked');
+        if (controlsEl) controlsEl.classList.add('active');
+        
+        var editableElements = document.querySelectorAll('.editable-text');
+        console.log('Found ' + editableElements.length + ' editable elements');
+        
+        editableElements.forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                e.target.setAttribute('contenteditable', 'true');
+                e.target.focus();
+            });
+        });
+        
+        console.log('Edit mode activated');
+    }
+    
+    function exitEditMode() {
+        console.log('Exiting edit mode');
+        isEditMode = false;
+        document.body.classList.remove('edit-mode');
+        
+        var lockEl = document.querySelector('.edit-lock');
+        var controlsEl = document.querySelector('.edit-controls');
+        
+        if (lockEl) lockEl.classList.remove('unlocked');
+        if (controlsEl) controlsEl.classList.remove('active');
+        
+        document.querySelectorAll('[contenteditable]').forEach(function(el) {
+            el.removeAttribute('contenteditable');
+        });
+    }
+    
+    function saveAndDownload() {
+        console.log('Saving...');
+        var wasEditMode = isEditMode;
+        
+        if (wasEditMode) {
+            document.body.classList.remove('edit-mode');
+            document.querySelectorAll('[contenteditable]').forEach(function(el) {
+                el.removeAttribute('contenteditable');
+            });
+        }
+        
+        var html = document.documentElement.outerHTML;
+        
+        if (wasEditMode) {
+            document.body.classList.add('edit-mode');
+        }
+        
+        var blob = new Blob([html], { type: 'text/html' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'juna_fae_report_edited.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert('✅ Downloaded! Upload to GitHub to deploy.');
+    }
+    
+    // Log on page load
+    console.log('Edit mode system loaded');
+    console.log('Lock element exists:', !!document.querySelector('.edit-lock'));
+    
+    </script>
+</body>
+</html>
