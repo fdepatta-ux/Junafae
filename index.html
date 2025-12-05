@@ -701,7 +701,14 @@
     
         
         /* Edit Mode Styles */
-        .edit-lock {
+        #passwordModal {
+            display: none;
+        }
+        #passwordModal.active {
+            display: flex !important;
+        }
+        
+                .edit-lock {
             position: fixed; top: 20px; right: 20px; width: 40px; height: 40px;
             background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
             border-radius: 50%; cursor: pointer; z-index: 10000;
@@ -755,15 +762,15 @@
 </div>
 
 <!-- Password Modal -->
-<div id="passwordModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10001; display: flex; align-items: center; justify-content: center;">
+<div id="passwordModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 10001; align-items: center; justify-content: center;">
     <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 400px; width: 90%;">
-        <h3 style="margin: 0 0 20px 0; color: #1e293b; font-size: 1.5em;">Enter Password</h3>
+        <h3 style="margin: 0 0 20px 0; color: #1e293b; font-size: 1.5em;"><span class="editable-text">Enter Password</span></h3>
         <input type="password" id="passwordInput" placeholder="Password" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; margin-bottom: 20px;">
         <div style="display: flex; gap: 10px;">
             <button onclick="submitPassword()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Unlock</button>
             <button onclick="closePasswordModal()" style="flex: 1; padding: 12px; background: #e5e7eb; color: #64748b; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Cancel</button>
         </div>
-        <p id="passwordError" style="color: #ef4444; margin-top: 15px; font-size: 14px; display: none;">Incorrect password. Try again.</p>
+        <p id="passwordError" style="color: #ef4444; margin-top: 15px; font-size: 14px; display: none;"><span class="editable-text">Incorrect password. Try again.</span></p>
     </div>
 </div>
 <div class="container">
@@ -786,83 +793,83 @@
                 
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <h4>Total Investment</h4>
+                        <h4><span class="editable-text">Total Investment</span></h4>
                         <div class="value">€1,426</div>
-                        <div class="subtext">Nov 1-30 period</div>
+                        <div class="subtext"><span class="editable-text">Nov 1-30 period</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Total Reach</h4>
+                        <h4><span class="editable-text">Total Reach</span></h4>
                         <div class="value">77,511</div>
-                        <div class="subtext">Unique people</div>
+                        <div class="subtext"><span class="editable-text">Unique people</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Total Impressions</h4>
+                        <h4><span class="editable-text">Total Impressions</span></h4>
                         <div class="value">220,828</div>
-                        <div class="subtext">Total ad views</div>
+                        <div class="subtext"><span class="editable-text">Total ad views</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Link Clicks</h4>
+                        <h4><span class="editable-text">Link Clicks</span></h4>
                         <div class="value">2,023</div>
-                        <div class="subtext">+68% vs October</div>
+                        <div class="subtext"><span class="editable-text">+68% vs October</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Average CPC</h4>
+                        <h4><span class="editable-text">Average CPC</span></h4>
                         <div class="value">€0.70</div>
-                        <div class="subtext">Cost per click</div>
+                        <div class="subtext"><span class="editable-text">Cost per click</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Overall CTR</h4>
+                        <h4><span class="editable-text">Overall CTR</span></h4>
                         <div class="value">0.92%</div>
-                        <div class="subtext">Click-through rate</div>
+                        <div class="subtext"><span class="editable-text">Click-through rate</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Landing Page Views</h4>
+                        <h4><span class="editable-text">Landing Page Views</span></h4>
                         <div class="value">1,347</div>
-                        <div class="subtext">Site visitors</div>
+                        <div class="subtext"><span class="editable-text">Site visitors</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>LP View Rate</h4>
+                        <h4><span class="editable-text">LP View Rate</span></h4>
                         <div class="value">66.6%</div>
-                        <div class="subtext">+43% vs October</div>
+                        <div class="subtext"><span class="editable-text">+43% vs October</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Total Leads</h4>
+                        <h4><span class="editable-text">Total Leads</span></h4>
                         <div class="value">3</div>
-                        <div class="subtext">Appointments</div>
+                        <div class="subtext"><span class="editable-text">Appointments</span></div>
                     </div>
                     <div class="metric-card">
-                        <h4>Cost per Lead</h4>
+                        <h4><span class="editable-text">Cost per Lead</span></h4>
                         <div class="value">€475</div>
-                        <div class="subtext">Average CPL</div>
+                        <div class="subtext"><span class="editable-text">Average CPL</span></div>
                     </div>
                 </div>
 
                 <div class="comparison-grid">
                     <div class="comparison-card wedding">
-                        <h4>💒 Wedding Campaign</h4>
-                        <div class="stat"><strong>Targeting:</strong> Ages 25-44, Broad Gender</div>
-                        <div class="stat"><strong>Reach:</strong> 35,855</div>
-                        <div class="stat"><strong>Impressions:</strong> 105,734</div>
-                        <div class="stat"><strong>Frequency:</strong> 2.95</div>
-                        <div class="stat"><strong>Spend:</strong> €731.58</div>
-                        <div class="stat"><strong>Link Clicks:</strong> 1,213</div>
-                        <div class="stat"><strong>CTR:</strong> 1.15%</div>
-                        <div class="stat"><strong>CPC:</strong> €0.60</div>
-                        <div class="stat"><strong>Landing Page Views:</strong> 787 (64.88% rate)</div>
-                        <div class="stat"><strong>Leads:</strong> 2 <span class="conversion-badge">€366 CPL</span></div>
+                        <h4><span class="editable-text">💒 Wedding Campaign</span></h4>
+                        <div class="stat"><strong><span class="editable-text">Targeting:</span></strong> Ages 25-44, Broad Gender</div>
+                        <div class="stat"><strong><span class="editable-text">Reach:</span></strong> 35,855</div>
+                        <div class="stat"><strong><span class="editable-text">Impressions:</span></strong> 105,734</div>
+                        <div class="stat"><strong><span class="editable-text">Frequency:</span></strong> 2.95</div>
+                        <div class="stat"><strong><span class="editable-text">Spend:</span></strong> €731.58</div>
+                        <div class="stat"><strong><span class="editable-text">Link Clicks:</span></strong> 1,213</div>
+                        <div class="stat"><strong><span class="editable-text">CTR:</span></strong> 1.15%</div>
+                        <div class="stat"><strong><span class="editable-text">CPC:</span></strong> €0.60</div>
+                        <div class="stat"><strong><span class="editable-text">Landing Page Views:</span></strong> 787 (64.88% rate)</div>
+                        <div class="stat"><strong><span class="editable-text">Leads:</span></strong> 2 <span class="conversion-badge">€366 CPL</span></div>
                     </div>
                     <div class="comparison-card engagement">
-                        <h4>💍 Engagement Campaign</h4>
-                        <div class="stat"><strong>Targeting:</strong> Men 25-44</div>
-                        <div class="stat"><strong>Reach:</strong> 41,656</div>
-                        <div class="stat"><strong>Impressions:</strong> 115,094</div>
-                        <div class="stat"><strong>Frequency:</strong> 2.76</div>
-                        <div class="stat"><strong>Spend:</strong> €694.23</div>
-                        <div class="stat"><strong>Link Clicks:</strong> 810</div>
-                        <div class="stat"><strong>CTR:</strong> 0.70%</div>
-                        <div class="stat"><strong>CPC:</strong> €0.86</div>
-                        <div class="stat"><strong>Landing Page Views:</strong> 560 (69.14% rate)</div>
-                        <div class="stat"><strong>Leads:</strong> 1 <span class="conversion-badge">€694 CPL</span></div>
+                        <h4><span class="editable-text">💍 Engagement Campaign</span></h4>
+                        <div class="stat"><strong><span class="editable-text">Targeting:</span></strong> Men 25-44</div>
+                        <div class="stat"><strong><span class="editable-text">Reach:</span></strong> 41,656</div>
+                        <div class="stat"><strong><span class="editable-text">Impressions:</span></strong> 115,094</div>
+                        <div class="stat"><strong><span class="editable-text">Frequency:</span></strong> 2.76</div>
+                        <div class="stat"><strong><span class="editable-text">Spend:</span></strong> €694.23</div>
+                        <div class="stat"><strong><span class="editable-text">Link Clicks:</span></strong> 810</div>
+                        <div class="stat"><strong><span class="editable-text">CTR:</span></strong> 0.70%</div>
+                        <div class="stat"><strong><span class="editable-text">CPC:</span></strong> €0.86</div>
+                        <div class="stat"><strong><span class="editable-text">Landing Page Views:</span></strong> 560 (69.14% rate)</div>
+                        <div class="stat"><strong><span class="editable-text">Leads:</span></strong> 1 <span class="conversion-badge">€694 CPL</span></div>
                     </div>
                 </div>
 
@@ -873,7 +880,7 @@
 
                 <div class="positive-indicator">
                     <h4><span class="editable-text">✅ Strategic Insight: Campaign Performance Validation</span></h4>
-                    <p><span class="editable-text">The optimization phase validates the dual campaign approach. The Wedding campaign, with broad gender targeting (ages 25-44), continues to see Meta's algorithm optimize toward female audiences due to their stronger engagement, achieving a <strong>1.15% CTR</strong> and <strong>€0.60 CPC</strong> with 2 leads generated. The Engagement campaign reaches men with solid metrics at <strong>0.70% CTR</strong> and <strong>€0.86 CPC</strong> with 1 lead. Both campaigns are performing within healthy benchmarks for luxury jewelry. The enhanced landing page view rates (Wedding: 64.88%, Engagement: 69.14%) confirm that creative optimization and ad set consolidation have successfully improved engagement quality.</span></p>
+                    <p><span class="editable-text">The optimization phase validates the dual campaign approach. The Wedding campaign, with broad gender targeting (ages 25-44), continues to see Meta's algorithm optimize toward female audiences due to their stronger engagement, achieving a <strong><span class="editable-text">1.15% CTR</span></strong> and <strong><span class="editable-text">€0.60 CPC</span></strong> with 2 leads generated. The Engagement campaign reaches men with solid metrics at <strong><span class="editable-text">0.70% CTR</span></strong> and <strong><span class="editable-text">€0.86 CPC</span></strong> with 1 lead. Both campaigns are performing within healthy benchmarks for luxury jewelry. The enhanced landing page view rates (Wedding: 64.88%, Engagement: 69.14%) confirm that creative optimization and ad set consolidation have successfully improved engagement quality.</span></p>
                 </div>
             </div>
 
@@ -892,84 +899,84 @@
 
                 <div class="metrics-grid">
                     <div class="metric-card wedding-theme">
-                        <h4>Total Spend</h4>
+                        <h4><span class="editable-text">Total Spend</span></h4>
                         <div class="value">€732</div>
-                        <div class="subtext">Campaign investment</div>
+                        <div class="subtext"><span class="editable-text">Campaign investment</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>Reach</h4>
+                        <h4><span class="editable-text">Reach</span></h4>
                         <div class="value">35,855</div>
-                        <div class="subtext">Unique people</div>
+                        <div class="subtext"><span class="editable-text">Unique people</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>Impressions</h4>
+                        <h4><span class="editable-text">Impressions</span></h4>
                         <div class="value">105,734</div>
-                        <div class="subtext">Total views</div>
+                        <div class="subtext"><span class="editable-text">Total views</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>Frequency</h4>
+                        <h4><span class="editable-text">Frequency</span></h4>
                         <div class="value">2.95</div>
-                        <div class="subtext">Avg views per person</div>
+                        <div class="subtext"><span class="editable-text">Avg views per person</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>Link Clicks</h4>
+                        <h4><span class="editable-text">Link Clicks</span></h4>
                         <div class="value">1,213</div>
-                        <div class="subtext">+83% vs October</div>
+                        <div class="subtext"><span class="editable-text">+83% vs October</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>CTR</h4>
+                        <h4><span class="editable-text">CTR</span></h4>
                         <div class="value">1.15%</div>
-                        <div class="subtext">Click-through rate</div>
+                        <div class="subtext"><span class="editable-text">Click-through rate</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>CPC</h4>
+                        <h4><span class="editable-text">CPC</span></h4>
                         <div class="value">€0.60</div>
-                        <div class="subtext">Cost per click</div>
+                        <div class="subtext"><span class="editable-text">Cost per click</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>CPM</h4>
+                        <h4><span class="editable-text">CPM</span></h4>
                         <div class="value">€6.92</div>
-                        <div class="subtext">Cost per 1K impr.</div>
+                        <div class="subtext"><span class="editable-text">Cost per 1K impr.</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>LP Views</h4>
+                        <h4><span class="editable-text">LP Views</span></h4>
                         <div class="value">787</div>
-                        <div class="subtext">Site visitors</div>
+                        <div class="subtext"><span class="editable-text">Site visitors</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>LP View Rate</h4>
+                        <h4><span class="editable-text">LP View Rate</span></h4>
                         <div class="value">64.88%</div>
-                        <div class="subtext">+39% vs October</div>
+                        <div class="subtext"><span class="editable-text">+39% vs October</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>Total Leads</h4>
+                        <h4><span class="editable-text">Total Leads</span></h4>
                         <div class="value">2</div>
-                        <div class="subtext">Appointments booked</div>
+                        <div class="subtext"><span class="editable-text">Appointments booked</span></div>
                     </div>
                     <div class="metric-card wedding-theme">
-                        <h4>Cost per Lead</h4>
+                        <h4><span class="editable-text">Cost per Lead</span></h4>
                         <div class="value">€366</div>
-                        <div class="subtext">Average CPL</div>
+                        <div class="subtext"><span class="editable-text">Average CPL</span></div>
                     </div>
                 </div>
 
                 <div class="positive-indicator">
                     <h4><span class="editable-text">✅ Campaign Performance Summary</span></h4>
-                    <p><span class="editable-text">The Wedding campaign demonstrates exceptional efficiency and strong conversion performance. With a <strong>1.15% CTR and €0.60 CPC</strong>, the campaign maintains excellent metrics while dramatically scaling volume (+83% clicks vs October). Generated <strong>2 leads at €366 average cost per lead</strong>, with one remarkably efficient lead at just €81.45. The <span class="highlight">64.88% landing page view rate</span> represents a 39% improvement from October, confirming that creative optimization and ad set consolidation are working. Meta's algorithm continues to optimize delivery toward female audiences who show stronger engagement with wedding band content.</span></p>
+                    <p><span class="editable-text">The Wedding campaign demonstrates exceptional efficiency and strong conversion performance. With a <strong><span class="editable-text">1.15% CTR and €0.60 CPC</span></strong>, the campaign maintains excellent metrics while dramatically scaling volume (+83% clicks vs October). Generated <strong><span class="editable-text">2 leads at €366 average cost per lead</span></strong>, with one remarkably efficient lead at just €81.45. The <span class="highlight">64.88% landing page view rate</span> represents a 39% improvement from October, confirming that creative optimization and ad set consolidation are working. Meta's algorithm continues to optimize delivery toward female audiences who show stronger engagement with wedding band content.</span></p>
                 </div>
 
                 <div class="phase-banner">
                     <h3><span class="editable-text">📈 Month-over-Month Improvements</span></h3>
                     <ul style="margin-top: 15px;">
-                        <li>Link Clicks: 664 → 1,213 (+82.7% increase)</li>
-                        <li>LP View Rate: 46.8% → 64.88% (+38.6% improvement)</li>
-                        <li>Conversion Tracking: Fully operational with 2 leads generated</li>
-                        <li>Volume Efficiency: Maintained €0.60 CPC despite 83% click increase</li>
-                        <li>Creative Quality: Iterations outperforming original versions</li>
+                        <li><span class="editable-text">Link Clicks: 664 → 1,213 (+82.7% increase)</span></li>
+                        <li><span class="editable-text">LP View Rate: 46.8% → 64.88% (+38.6% improvement)</span></li>
+                        <li><span class="editable-text">Conversion Tracking: Fully operational with 2 leads generated</span></li>
+                        <li><span class="editable-text">Volume Efficiency: Maintained €0.60 CPC despite 83% click increase</span></li>
+                        <li><span class="editable-text">Creative Quality: Iterations outperforming original versions</span></li>
                     </ul>
                 </div>
 
-                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;">👥 Audience Demographics & Performance</h3>
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;"><span class="editable-text">👥 Audience Demographics & Performance</span></h3>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
@@ -987,54 +994,54 @@
                         </thead>
                         <tbody>
                             <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <td><strong>Women 25-34</strong></td>
-                                <td>81,283</td>
-                                <td>882</td>
-                                <td>1.09%</td>
-                                <td>€0.60</td>
-                                <td>552</td>
-                                <td>62.59%</td>
-                                <td>1 <span class="conversion-badge">LEAD</span></td>
+                                <td><strong><span class="editable-text">Women 25-34</span></strong></td>
+                                <td><span class="editable-text">81,283</span></td>
+                                <td><span class="editable-text">882</span></td>
+                                <td><span class="editable-text">1.09%</span></td>
+                                <td><span class="editable-text">€0.60</span></td>
+                                <td><span class="editable-text">552</span></td>
+                                <td><span class="editable-text">62.59%</span></td>
+                                <td><span class="editable-text">1 <span class="conversion-badge">LEAD</span></span></td>
                             </tr>
                             <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <td><strong>Women 35-44</strong></td>
-                                <td>19,484</td>
-                                <td>261</td>
-                                <td>1.34%</td>
-                                <td>€0.61</td>
-                                <td>181</td>
-                                <td>69.35%</td>
-                                <td>1 <span class="conversion-badge">LEAD</span></td>
+                                <td><strong><span class="editable-text">Women 35-44</span></strong></td>
+                                <td><span class="editable-text">19,484</span></td>
+                                <td><span class="editable-text">261</span></td>
+                                <td><span class="editable-text">1.34%</span></td>
+                                <td><span class="editable-text">€0.61</span></td>
+                                <td><span class="editable-text">181</span></td>
+                                <td><span class="editable-text">69.35%</span></td>
+                                <td><span class="editable-text">1 <span class="conversion-badge">LEAD</span></span></td>
                             </tr>
                             <tr>
-                                <td><strong>Men 25-34</strong></td>
-                                <td>2,346</td>
-                                <td>23</td>
-                                <td>0.98%</td>
-                                <td>€0.85</td>
-                                <td>18</td>
-                                <td>78.26%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">Men 25-34</span></strong></td>
+                                <td><span class="editable-text">2,346</span></td>
+                                <td><span class="editable-text">23</span></td>
+                                <td><span class="editable-text">0.98%</span></td>
+                                <td><span class="editable-text">€0.85</span></td>
+                                <td><span class="editable-text">18</span></td>
+                                <td><span class="editable-text">78.26%</span></td>
+                                <td><span class="editable-text">0</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Women 45-54</strong></td>
-                                <td>1,014</td>
-                                <td>22</td>
-                                <td>2.17%</td>
-                                <td>€0.47</td>
-                                <td>9</td>
-                                <td>40.91%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">Women 45-54</span></strong></td>
+                                <td><span class="editable-text">1,014</span></td>
+                                <td><span class="editable-text">22</span></td>
+                                <td><span class="editable-text">2.17%</span></td>
+                                <td><span class="editable-text">€0.47</span></td>
+                                <td><span class="editable-text">9</span></td>
+                                <td><span class="editable-text">40.91%</span></td>
+                                <td><span class="editable-text">0</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Men 35-44</strong></td>
-                                <td>923</td>
-                                <td>12</td>
-                                <td>1.30%</td>
-                                <td>€0.65</td>
-                                <td>5</td>
-                                <td>41.67%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">Men 35-44</span></strong></td>
+                                <td><span class="editable-text">923</span></td>
+                                <td><span class="editable-text">12</span></td>
+                                <td><span class="editable-text">1.30%</span></td>
+                                <td><span class="editable-text">€0.65</span></td>
+                                <td><span class="editable-text">5</span></td>
+                                <td><span class="editable-text">41.67%</span></td>
+                                <td><span class="editable-text">0</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1047,10 +1054,10 @@
 
                 <div class="positive-indicator">
                     <h4><span class="editable-text">✅ Audience Insights: Female Dominance with Dual Conversions</span></h4>
-                    <p><span class="editable-text"><span class="editable-text"><span class="highlight">Women 25-34 are the powerhouse</span> of this campaign, generating <strong>882 clicks (72.7% of total volume)</strong> at an efficient <strong>€0.60 CPC</strong> and <strong>1.09% CTR</strong>. This segment delivered 552 landing page views and <strong>converted 1 lead</strong>. <span class="highlight">Women 35-44 show the highest engagement quality</span> with a remarkable <strong>69.35% LP view rate and 1.34% CTR</strong>, also generating <strong>1 lead</strong>. Together, these two female segments account for 94% of all clicks and both conversions, validating Meta's algorithm optimization toward women planning weddings. Male engagement exists but at significantly lower volume, confirming wedding band messaging resonates primarily with female audiences.</span></span></p>
+                    <p><span class="editable-text"><span class="editable-text"><span class="highlight">Women 25-34 are the powerhouse</span> of this campaign, generating <strong><span class="editable-text">882 clicks (72.7% of total volume)</span></strong> at an efficient <strong><span class="editable-text">€0.60 CPC</span></strong> and <strong><span class="editable-text">1.09% CTR</span></strong>. This segment delivered 552 landing page views and <strong><span class="editable-text">converted 1 lead</span></strong>. <span class="highlight">Women 35-44 show the highest engagement quality</span> with a remarkable <strong><span class="editable-text">69.35% LP view rate and 1.34% CTR</span></strong>, also generating <strong><span class="editable-text">1 lead</span></strong>. Together, these two female segments account for 94% of all clicks and both conversions, validating Meta's algorithm optimization toward women planning weddings. Male engagement exists but at significantly lower volume, confirming wedding band messaging resonates primarily with female audiences.</span></span></p>
                 </div>
 
-                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;">🗺️ Geographic Performance Distribution</h3>
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;"><span class="editable-text">🗺️ Geographic Performance Distribution</span></h3>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
@@ -1066,28 +1073,28 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Flemish Region</strong></td>
-                                <td>77,045</td>
-                                <td>882</td>
-                                <td>1.14%</td>
-                                <td>€0.62</td>
-                                <td>72.7%</td>
+                                <td><strong><span class="editable-text">Flemish Region</span></strong></td>
+                                <td><span class="editable-text">77,045</span></td>
+                                <td><span class="editable-text">882</span></td>
+                                <td><span class="editable-text">1.14%</span></td>
+                                <td><span class="editable-text">€0.62</span></td>
+                                <td><span class="editable-text">72.7%</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Wallonia</strong></td>
-                                <td>15,929</td>
-                                <td>188</td>
-                                <td>1.18%</td>
-                                <td>€0.49</td>
-                                <td>15.5%</td>
+                                <td><strong><span class="editable-text">Wallonia</span></strong></td>
+                                <td><span class="editable-text">15,929</span></td>
+                                <td><span class="editable-text">188</span></td>
+                                <td><span class="editable-text">1.18%</span></td>
+                                <td><span class="editable-text">€0.49</span></td>
+                                <td><span class="editable-text">15.5%</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Brussels</strong></td>
-                                <td>12,760</td>
-                                <td>143</td>
-                                <td>1.12%</td>
-                                <td>€0.64</td>
-                                <td>11.8%</td>
+                                <td><strong><span class="editable-text">Brussels</span></strong></td>
+                                <td><span class="editable-text">12,760</span></td>
+                                <td><span class="editable-text">143</span></td>
+                                <td><span class="editable-text">1.12%</span></td>
+                                <td><span class="editable-text">€0.64</span></td>
+                                <td><span class="editable-text">11.8%</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1100,12 +1107,12 @@
 
                 <div class="positive-indicator">
                     <h4><span class="editable-text">✅ Geographic Insights: Flemish Region Leads Performance</span></h4>
-                    <p><span class="editable-text">The <strong>Flemish Region dominates with 72.7% of all clicks</strong> (882 clicks), delivering consistent performance at <strong>1.14% CTR and €0.62 CPC</strong>. <span class="highlight">Wallonia shows the strongest efficiency</span> with the lowest CPC at <strong>€0.49</strong> and highest CTR at <strong>1.18%</strong>, despite lower volume (188 clicks). Brussels contributes 143 clicks at competitive metrics (1.12% CTR, €0.64 CPC). The geographic distribution aligns with population density and suggests opportunity to scale budget in Wallonia given its superior cost efficiency.</span></p>
+                    <p><span class="editable-text">The <strong><span class="editable-text">Flemish Region dominates with 72.7% of all clicks</span></strong> (882 clicks), delivering consistent performance at <strong><span class="editable-text">1.14% CTR and €0.62 CPC</span></strong>. <span class="highlight">Wallonia shows the strongest efficiency</span> with the lowest CPC at <strong><span class="editable-text">€0.49</span></strong> and highest CTR at <strong><span class="editable-text">1.18%</span></strong>, despite lower volume (188 clicks). Brussels contributes 143 clicks at competitive metrics (1.12% CTR, €0.64 CPC). The geographic distribution aligns with population density and suggests opportunity to scale budget in Wallonia given its superior cost efficiency.</span></p>
                 </div>
 
-                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;">🎨 Creative Performance Analysis</h3>
+                <h3 style="font-size: 1.6em; color: #1e293b; margin: 50px 0 30px 0; font-weight: 600;"><span class="editable-text">🎨 Creative Performance Analysis</span></h3>
                 
-                <p style="margin-bottom: 25px; color: #64748b; font-size: 1.05em;">Detailed performance breakdown of top 10 wedding band creatives from 27 active ads featuring emotional imagery, testimonials, and product showcases.</p>
+                <p style="margin-bottom: 25px; color: #64748b; font-size: 1.05em;"><span class="editable-text">Detailed performance breakdown of top 10 wedding band creatives from 27 active ads featuring emotional imagery, testimonials, and product showcases.</span></p>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
@@ -1124,80 +1131,80 @@
                         </thead>
                         <tbody>
                             <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <td><strong>IMG5.1 - Testimonial</strong></td>
-                                <td>Static</td>
-                                <td>257</td>
-                                <td>0.94%</td>
-                                <td>€0.78</td>
-                                <td>219</td>
-                                <td>85.21%</td>
-                                <td>1 <span class="conversion-badge">€200 CPL</span></td>
+                                <td><strong><span class="editable-text">IMG5.1 - Testimonial</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">257</span></td>
+                                <td><span class="editable-text">0.94%</span></td>
+                                <td><span class="editable-text">€0.78</span></td>
+                                <td><span class="editable-text">219</span></td>
+                                <td><span class="editable-text">85.21%</span></td>
+                                <td><span class="editable-text">1 <span class="conversion-badge">€200 CPL</span></span></td>
                                 <td><a href="https://drive.google.com/file/d/1yuf_Ls_ZZpc3QW7RNy9MEHWocri0P98Y/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG3.2 - Custom</strong></td>
-                                <td>Static</td>
-                                <td>170</td>
-                                <td>1.43%</td>
-                                <td>€0.52</td>
-                                <td>115</td>
-                                <td>67.65%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG3.2 - Custom</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">170</span></td>
+                                <td><span class="editable-text">1.43%</span></td>
+                                <td><span class="editable-text">€0.52</span></td>
+                                <td><span class="editable-text">115</span></td>
+                                <td><span class="editable-text">67.65%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1RHU9JrAjMDzCsyV6_mN4WVzyFM-LE22f/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG6 - The moment</strong></td>
-                                <td>Static</td>
-                                <td>155</td>
-                                <td>0.81%</td>
-                                <td>€0.70</td>
-                                <td>136</td>
-                                <td>87.74% <span class="wedding-badge">TOP LP RATE</span></td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG6 - The moment</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">155</span></td>
+                                <td><span class="editable-text">0.81%</span></td>
+                                <td><span class="editable-text">€0.70</span></td>
+                                <td><span class="editable-text">136</span></td>
+                                <td><span class="editable-text">87.74% <span class="wedding-badge">TOP LP RATE</span></span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1Xgi5D68oKSCd2Z0CHtMasrFvmsAO_qr0/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <td><strong>IMG1.1 - Stack</strong></td>
-                                <td>Static</td>
-                                <td>116</td>
-                                <td>0.97%</td>
-                                <td>€0.70</td>
-                                <td>78</td>
-                                <td>67.24%</td>
-                                <td>1 <span class="conversion-badge">€81 CPL! 🏆</span></td>
+                                <td><strong><span class="editable-text">IMG1.1 - Stack</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">116</span></td>
+                                <td><span class="editable-text">0.97%</span></td>
+                                <td><span class="editable-text">€0.70</span></td>
+                                <td><span class="editable-text">78</span></td>
+                                <td><span class="editable-text">67.24%</span></td>
+                                <td><span class="editable-text">1 <span class="conversion-badge">€81 CPL! 🏆</span></span></td>
                                 <td><a href="https://drive.google.com/file/d/1zdd_JDQxz27pDiAhfym-Q4eLahk_i8bc/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG5.2 - Testimonial</strong></td>
-                                <td>Static</td>
-                                <td>64</td>
-                                <td>1.10%</td>
-                                <td>€0.73</td>
-                                <td>38</td>
-                                <td>59.38%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG5.2 - Testimonial</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">64</span></td>
+                                <td><span class="editable-text">1.10%</span></td>
+                                <td><span class="editable-text">€0.73</span></td>
+                                <td><span class="editable-text">38</span></td>
+                                <td><span class="editable-text">59.38%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1XOjdELdWwZdMqLSTPl4UMz_mD3lWZ6pK/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>Collection Ad 2 - Yours v1</strong></td>
-                                <td>Collection</td>
-                                <td>59</td>
-                                <td>2.02%</td>
-                                <td>€0.29</td>
-                                <td>24</td>
-                                <td>40.68%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">Collection Ad 2 - Yours v1</span></strong></td>
+                                <td><span class="editable-text">Collection</span></td>
+                                <td><span class="editable-text">59</span></td>
+                                <td><span class="editable-text">2.02%</span></td>
+                                <td><span class="editable-text">€0.29</span></td>
+                                <td><span class="editable-text">24</span></td>
+                                <td><span class="editable-text">40.68%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/11kkhdOcLXOc-oUodm__1DMrSSpsKNNhx/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>VID3 - Testimonial</strong></td>
-                                <td>Video</td>
-                                <td>32</td>
-                                <td>0.92%</td>
-                                <td>€1.04</td>
-                                <td>29</td>
-                                <td>90.62% <span class="wedding-badge">VIDEO WIN</span></td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">VID3 - Testimonial</span></strong></td>
+                                <td><span class="editable-text">Video</span></td>
+                                <td><span class="editable-text">32</span></td>
+                                <td><span class="editable-text">0.92%</span></td>
+                                <td><span class="editable-text">€1.04</span></td>
+                                <td><span class="editable-text">29</span></td>
+                                <td><span class="editable-text">90.62% <span class="wedding-badge">VIDEO WIN</span></span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1uq7Gul9vGebDichR0pLBIHTLaAYVxBuf/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                         </tbody>
@@ -1205,18 +1212,18 @@
                 </div>
 
                 <div class="positive-indicator" style="margin-top: 30px;">
-                    <h4>✅ Creative Strategy Insights: Testimonials & Product Stacks Win</h4>
-                    <p><span class="highlight">"IMG5.1 - Testimonial"</span> is the volume leader with <strong>257 clicks and 85.21% LP view rate</strong>, generating 1 lead at €200 CPL. This proves testimonial-based content resonates strongly. <span class="highlight">"IMG1.1 - Stack"</span> achieved the <strong>campaign's best ROI with €81.45 cost per lead</strong>, demonstrating clean product photography converts efficiently. <span class="highlight">"IMG6 - The moment"</span> achieves the <strong>highest LP view rate at 87.74%</strong>, showing emotional couple imagery drives deep engagement. <span class="highlight">"VID3 - Testimonial"</span> proves video works with an exceptional <strong>90.62% LP view rate</strong> (highest in both campaigns), though volume remains limited. Collection ads drive clicks at low CPC but show significantly lower LP view rates, suggesting they attract browsers rather than serious buyers.</p>
+                    <h4><span class="editable-text">✅ Creative Strategy Insights: Testimonials & Product Stacks Win</span></h4>
+                    <p><span class="highlight">"IMG5.1 - Testimonial"</span> is the volume leader with <strong><span class="editable-text">257 clicks and 85.21% LP view rate</span></strong>, generating 1 lead at €200 CPL. This proves testimonial-based content resonates strongly. <span class="highlight">"IMG1.1 - Stack"</span> achieved the <strong><span class="editable-text">campaign's best ROI with €81.45 cost per lead</span></strong>, demonstrating clean product photography converts efficiently. <span class="highlight">"IMG6 - The moment"</span> achieves the <strong><span class="editable-text">highest LP view rate at 87.74%</span></strong>, showing emotional couple imagery drives deep engagement. <span class="highlight">"VID3 - Testimonial"</span> proves video works with an exceptional <strong><span class="editable-text">90.62% LP view rate</span></strong> (highest in both campaigns), though volume remains limited. Collection ads drive clicks at low CPC but show significantly lower LP view rates, suggesting they attract browsers rather than serious buyers.</p>
                 </div>
 
                 <div class="phase-banner">
                     <h3><span class="editable-text">🎯 Wedding Campaign Key Takeaways</span></h3>
                     <ul style="margin-top: 15px;">
-                        <li><strong>Audience Success:</strong> Women 25-44 drive 94% of clicks and both conversions</li>
-                        <li><strong>Creative Winners:</strong> Testimonials (IMG5.1) and product stacks (IMG1.1) convert</li>
-                        <li><strong>Video Potential:</strong> VID3 shows 90.62% LP rate - expand video testimonials</li>
-                        <li><strong>Geographic Opportunity:</strong> Wallonia shows best efficiency (€0.49 CPC, 1.18% CTR)</li>
-                        <li><strong>Iteration Validation:</strong> .1 versions outperform originals consistently</li>
+                        <li><strong><span class="editable-text">Audience Success:</span></strong> Women 25-44 drive 94% of clicks and both conversions</li>
+                        <li><strong><span class="editable-text">Creative Winners:</span></strong> Testimonials (IMG5.1) and product stacks (IMG1.1) convert</li>
+                        <li><strong><span class="editable-text">Video Potential:</span></strong> VID3 shows 90.62% LP rate - expand video testimonials</li>
+                        <li><strong><span class="editable-text">Geographic Opportunity:</span></strong> Wallonia shows best efficiency (€0.49 CPC, 1.18% CTR)</li>
+                        <li><strong><span class="editable-text">Iteration Validation:</span></strong> .1 versions outperform originals consistently</li>
                     </ul>
                 </div>
             </div>
@@ -1234,83 +1241,83 @@
 
                 <div class="metrics-grid">
                     <div class="metric-card engagement-theme">
-                        <h4>Total Spend</h4>
+                        <h4><span class="editable-text">Total Spend</span></h4>
                         <div class="value">€694</div>
-                        <div class="subtext">Campaign investment</div>
+                        <div class="subtext"><span class="editable-text">Campaign investment</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>Reach</h4>
+                        <h4><span class="editable-text">Reach</span></h4>
                         <div class="value">41,656</div>
-                        <div class="subtext">Unique people</div>
+                        <div class="subtext"><span class="editable-text">Unique people</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>Impressions</h4>
+                        <h4><span class="editable-text">Impressions</span></h4>
                         <div class="value">115,094</div>
-                        <div class="subtext">Total views</div>
+                        <div class="subtext"><span class="editable-text">Total views</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>Frequency</h4>
+                        <h4><span class="editable-text">Frequency</span></h4>
                         <div class="value">2.76</div>
-                        <div class="subtext">Avg views per person</div>
+                        <div class="subtext"><span class="editable-text">Avg views per person</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>Link Clicks</h4>
+                        <h4><span class="editable-text">Link Clicks</span></h4>
                         <div class="value">810</div>
-                        <div class="subtext">+55% vs October</div>
+                        <div class="subtext"><span class="editable-text">+55% vs October</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>CTR</h4>
+                        <h4><span class="editable-text">CTR</span></h4>
                         <div class="value">0.70%</div>
-                        <div class="subtext">Click-through rate</div>
+                        <div class="subtext"><span class="editable-text">Click-through rate</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>CPC</h4>
+                        <h4><span class="editable-text">CPC</span></h4>
                         <div class="value">€0.86</div>
-                        <div class="subtext">Cost per click</div>
+                        <div class="subtext"><span class="editable-text">Cost per click</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>CPM</h4>
+                        <h4><span class="editable-text">CPM</span></h4>
                         <div class="value">€6.03</div>
-                        <div class="subtext">Cost per 1K impr.</div>
+                        <div class="subtext"><span class="editable-text">Cost per 1K impr.</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>LP Views</h4>
+                        <h4><span class="editable-text">LP Views</span></h4>
                         <div class="value">560</div>
-                        <div class="subtext">Site visitors</div>
+                        <div class="subtext"><span class="editable-text">Site visitors</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>LP View Rate</h4>
+                        <h4><span class="editable-text">LP View Rate</span></h4>
                         <div class="value">69.14%</div>
-                        <div class="subtext">+49% vs October</div>
+                        <div class="subtext"><span class="editable-text">+49% vs October</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>Total Leads</h4>
+                        <h4><span class="editable-text">Total Leads</span></h4>
                         <div class="value">1</div>
-                        <div class="subtext">Appointment booked</div>
+                        <div class="subtext"><span class="editable-text">Appointment booked</span></div>
                     </div>
                     <div class="metric-card engagement-theme">
-                        <h4>Cost per Lead</h4>
+                        <h4><span class="editable-text">Cost per Lead</span></h4>
                         <div class="value">€694</div>
-                        <div class="subtext">Average CPL</div>
+                        <div class="subtext"><span class="editable-text">Average CPL</span></div>
                     </div>
                 </div>
 
                 <div class="positive-indicator">
                     <h4><span class="editable-text">✅ Campaign Standout Performance</span></h4>
-                    <p><span class="editable-text">The Engagement campaign shows strong optimization results with <span class="highlight">69.14% landing page view rate</span>, the highest across both campaigns. Despite a 17% CTR decrease from October (due to broader reach and increased impressions), the dramatic improvement in LP view rate indicates <strong>significantly higher quality engagement</strong>. The campaign generated 810 clicks (+55% vs October) and successfully converted 1 lead. The addition of interest targeting (luxury jewelry brands) appears to be reaching men actively researching engagement rings, as evidenced by the exceptional LP view commitment.</span></p>
+                    <p><span class="editable-text">The Engagement campaign shows strong optimization results with <span class="highlight">69.14% landing page view rate</span>, the highest across both campaigns. Despite a 17% CTR decrease from October (due to broader reach and increased impressions), the dramatic improvement in LP view rate indicates <strong><span class="editable-text">significantly higher quality engagement</span></strong>. The campaign generated 810 clicks (+55% vs October) and successfully converted 1 lead. The addition of interest targeting (luxury jewelry brands) appears to be reaching men actively researching engagement rings, as evidenced by the exceptional LP view commitment.</span></p>
                 </div>
 
                 <div class="phase-banner">
                     <h3><span class="editable-text">📈 Key Improvements vs October</span></h3>
                     <ul style="margin-top: 15px;">
-                        <li>Link Clicks: 522 → 810 (+55.2%)</li>
-                        <li>LP View Rate: 46.4% → 69.14% (+49.0%)</li>
-                        <li>Conversion Tracking: Now operational with 1 lead</li>
-                        <li>Creative Quality: Iterations driving higher engagement</li>
+                        <li><span class="editable-text">Link Clicks: 522 → 810 (+55.2%)</span></li>
+                        <li><span class="editable-text">LP View Rate: 46.4% → 69.14% (+49.0%)</span></li>
+                        <li><span class="editable-text">Conversion Tracking: Now operational with 1 lead</span></li>
+                        <li><span class="editable-text">Creative Quality: Iterations driving higher engagement</span></li>
                     </ul>
                 </div>
 
-                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;">👥 Audience Performance</h3>
+                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;"><span class="editable-text">👥 Audience Performance</span></h3>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
@@ -1327,31 +1334,31 @@
                         </thead>
                         <tbody>
                             <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <td><strong>Men 25-34</strong></td>
-                                <td>598</td>
-                                <td>0.68%</td>
-                                <td>€0.85</td>
-                                <td>411</td>
-                                <td>68.73%</td>
-                                <td>1 <span class="conversion-badge">CONVERTED</span></td>
+                                <td><strong><span class="editable-text">Men 25-34</span></strong></td>
+                                <td><span class="editable-text">598</span></td>
+                                <td><span class="editable-text">0.68%</span></td>
+                                <td><span class="editable-text">€0.85</span></td>
+                                <td><span class="editable-text">411</span></td>
+                                <td><span class="editable-text">68.73%</span></td>
+                                <td><span class="editable-text">1 <span class="conversion-badge">CONVERTED</span></span></td>
                             </tr>
                             <tr>
-                                <td><strong>Men 35-44</strong></td>
-                                <td>203</td>
-                                <td>0.78%</td>
-                                <td>€0.86</td>
-                                <td>140</td>
-                                <td>68.97%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">Men 35-44</span></strong></td>
+                                <td><span class="editable-text">203</span></td>
+                                <td><span class="editable-text">0.78%</span></td>
+                                <td><span class="editable-text">€0.86</span></td>
+                                <td><span class="editable-text">140</span></td>
+                                <td><span class="editable-text">68.97%</span></td>
+                                <td><span class="editable-text">0</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Men 45-54</strong></td>
-                                <td>9</td>
-                                <td>0.69%</td>
-                                <td>€1.27</td>
-                                <td>4</td>
-                                <td>44.44%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">Men 45-54</span></strong></td>
+                                <td><span class="editable-text">9</span></td>
+                                <td><span class="editable-text">0.69%</span></td>
+                                <td><span class="editable-text">€1.27</span></td>
+                                <td><span class="editable-text">4</span></td>
+                                <td><span class="editable-text">44.44%</span></td>
+                                <td><span class="editable-text">0</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1359,10 +1366,10 @@
 
                 <div class="positive-indicator">
                     <h4><span class="editable-text">✅ Key Insight: Men 25-34 Driving Conversions</span></h4>
-                    <p><span class="editable-text"><span class="editable-text">Men 25-34 dominate campaign performance, generating <strong>598 clicks (74% of total)</strong> at an efficient <strong>€0.85 CPC</strong>, with a solid <strong>68.73% LP view rate</strong>. This segment also generated the campaign's single lead, confirming this is the prime engagement ring demographic. Men 35-44 show consistent engagement with 203 clicks and nearly identical LP view rate (68.97%), representing older first-time buyers or second marriages. The targeting strategy combining demographic focus with interest-based targeting (luxury jewelry brands) is successfully reaching men actively in the market for engagement rings.</span></span></p>
+                    <p><span class="editable-text"><span class="editable-text">Men 25-34 dominate campaign performance, generating <strong><span class="editable-text">598 clicks (74% of total)</span></strong> at an efficient <strong><span class="editable-text">€0.85 CPC</span></strong>, with a solid <strong><span class="editable-text">68.73% LP view rate</span></strong>. This segment also generated the campaign's single lead, confirming this is the prime engagement ring demographic. Men 35-44 show consistent engagement with 203 clicks and nearly identical LP view rate (68.97%), representing older first-time buyers or second marriages. The targeting strategy combining demographic focus with interest-based targeting (luxury jewelry brands) is successfully reaching men actively in the market for engagement rings.</span></span></p>
                 </div>
 
-                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;">🗺️ Geographic Performance</h3>
+                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;"><span class="editable-text">🗺️ Geographic Performance</span></h3>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
@@ -1377,25 +1384,25 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Flemish Region</strong></td>
-                                <td>589</td>
-                                <td>0.68%</td>
-                                <td>€0.89</td>
-                                <td>72.7%</td>
+                                <td><strong><span class="editable-text">Flemish Region</span></strong></td>
+                                <td><span class="editable-text">589</span></td>
+                                <td><span class="editable-text">0.68%</span></td>
+                                <td><span class="editable-text">€0.89</span></td>
+                                <td><span class="editable-text">72.7%</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Wallonia</strong></td>
-                                <td>128</td>
-                                <td>0.87%</td>
-                                <td>€0.67</td>
-                                <td>15.8%</td>
+                                <td><strong><span class="editable-text">Wallonia</span></strong></td>
+                                <td><span class="editable-text">128</span></td>
+                                <td><span class="editable-text">0.87%</span></td>
+                                <td><span class="editable-text">€0.67</span></td>
+                                <td><span class="editable-text">15.8%</span></td>
                             </tr>
                             <tr>
-                                <td><strong>Brussels</strong></td>
-                                <td>93</td>
-                                <td>0.68%</td>
-                                <td>€0.89</td>
-                                <td>11.5%</td>
+                                <td><strong><span class="editable-text">Brussels</span></strong></td>
+                                <td><span class="editable-text">93</span></td>
+                                <td><span class="editable-text">0.68%</span></td>
+                                <td><span class="editable-text">€0.89</span></td>
+                                <td><span class="editable-text">11.5%</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1406,9 +1413,9 @@
                     <canvas id="engagementGeoChart"></canvas>
                 </div>
 
-                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;">🎨 Creative Performance</h3>
+                <h3 style="font-size: 1.5em; color: #1e293b; margin: 45px 0 30px 0; font-weight: 600;"><span class="editable-text">🎨 Creative Performance</span></h3>
                 
-                <p style="margin-bottom: 20px; color: #64748b; font-size: 1.05em;">Top 10 performing ads from 27 active creatives targeting men considering proposals.</p>
+                <p style="margin-bottom: 20px; color: #64748b; font-size: 1.05em;"><span class="editable-text">Top 10 performing ads from 27 active creatives targeting men considering proposals.</span></p>
                 
                 <div class="ad-table-scroll">
                     <table class="comparison-table">
@@ -1427,80 +1434,80 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>IMG7.1 - Single rings</strong></td>
-                                <td>Static</td>
-                                <td>179</td>
-                                <td>0.65%</td>
-                                <td>€0.93</td>
-                                <td>152</td>
-                                <td>84.92% <span class="engagement-badge">TOP LP RATE</span></td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG7.1 - Single rings</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">179</span></td>
+                                <td><span class="editable-text">0.65%</span></td>
+                                <td><span class="editable-text">€0.93</span></td>
+                                <td><span class="editable-text">152</span></td>
+                                <td><span class="editable-text">84.92% <span class="engagement-badge">TOP LP RATE</span></span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1VPZ82-OuZlYPUd4Q7GpA_3wadT_xO36s/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG8 - She said yes</strong></td>
-                                <td>Static</td>
-                                <td>141</td>
-                                <td>0.63%</td>
-                                <td>€0.79</td>
-                                <td>115</td>
-                                <td>81.56%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG8 - She said yes</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">141</span></td>
+                                <td><span class="editable-text">0.63%</span></td>
+                                <td><span class="editable-text">€0.79</span></td>
+                                <td><span class="editable-text">115</span></td>
+                                <td><span class="editable-text">81.56%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1h-6z2bhHaj-4kDVBGGtsWkwO3Bb5rFMr/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG10.1 - Waiting for</strong></td>
-                                <td>Static</td>
-                                <td>97</td>
-                                <td>0.67%</td>
-                                <td>€0.91</td>
-                                <td>72</td>
-                                <td>74.23%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG10.1 - Waiting for</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">97</span></td>
+                                <td><span class="editable-text">0.67%</span></td>
+                                <td><span class="editable-text">€0.91</span></td>
+                                <td><span class="editable-text">72</span></td>
+                                <td><span class="editable-text">74.23%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1ixVI7Rfzf0zEpugssYbBXp1mPxPsZhT5/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG8.2 - She said yes</strong></td>
-                                <td>Static</td>
-                                <td>70</td>
-                                <td>0.97%</td>
-                                <td>€0.78</td>
-                                <td>50</td>
-                                <td>71.43%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG8.2 - She said yes</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">70</span></td>
+                                <td><span class="editable-text">0.97%</span></td>
+                                <td><span class="editable-text">€0.78</span></td>
+                                <td><span class="editable-text">50</span></td>
+                                <td><span class="editable-text">71.43%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1NiY6XN-DpyeM63JMLAiNHJFcHmFHtSvo/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <td><strong>IMG8.2 - She said yes</strong></td>
-                                <td>Static</td>
-                                <td>40</td>
-                                <td>0.77%</td>
-                                <td>€0.99</td>
-                                <td>30</td>
-                                <td>75.00%</td>
-                                <td>1 <span class="conversion-badge">€40 CPL!</span></td>
+                                <td><strong><span class="editable-text">IMG8.2 - She said yes</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">40</span></td>
+                                <td><span class="editable-text">0.77%</span></td>
+                                <td><span class="editable-text">€0.99</span></td>
+                                <td><span class="editable-text">30</span></td>
+                                <td><span class="editable-text">75.00%</span></td>
+                                <td><span class="editable-text">1 <span class="conversion-badge">€40 CPL!</span></span></td>
                                 <td><a href="https://drive.google.com/file/d/1NiY6XN-DpyeM63JMLAiNHJFcHmFHtSvo/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG7.2 - Single rings</strong></td>
-                                <td>Static</td>
-                                <td>38</td>
-                                <td>0.66%</td>
-                                <td>€0.68</td>
-                                <td>25</td>
-                                <td>65.79%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG7.2 - Single rings</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">38</span></td>
+                                <td><span class="editable-text">0.66%</span></td>
+                                <td><span class="editable-text">€0.68</span></td>
+                                <td><span class="editable-text">25</span></td>
+                                <td><span class="editable-text">65.79%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1qpPKIgo3xwZBIJDF2SX2di0CJ2lqtXIG/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                             <tr>
-                                <td><strong>IMG13.2 - It was forever</strong></td>
-                                <td>Static</td>
-                                <td>18</td>
-                                <td>0.93%</td>
-                                <td>€0.88</td>
-                                <td>10</td>
-                                <td>55.56%</td>
-                                <td>0</td>
+                                <td><strong><span class="editable-text">IMG13.2 - It was forever</span></strong></td>
+                                <td><span class="editable-text">Static</span></td>
+                                <td><span class="editable-text">18</span></td>
+                                <td><span class="editable-text">0.93%</span></td>
+                                <td><span class="editable-text">€0.88</span></td>
+                                <td><span class="editable-text">10</span></td>
+                                <td><span class="editable-text">55.56%</span></td>
+                                <td><span class="editable-text">0</span></td>
                                 <td><a href="https://drive.google.com/file/d/1Lhwqq5zjnBc5UYxuZgb8szR9F9_5SvtG/view?usp=sharing" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">View</a></td>
                             </tr>
                         </tbody>
@@ -1513,8 +1520,8 @@
                 </div>
 
                 <div class="positive-indicator" style="margin-top: 30px;">
-                    <h4>✅ Creative Insights - Engagement</h4>
-                    <p><span class="highlight">"IMG7.1 - Single rings"</span> leads with <strong>84.92% LP view rate</strong> and 179 clicks, showing clean product photography strongly resonates. <span class="highlight">"IMG8.2 - She said yes"</span> generated the campaign's single lead at an outstanding <strong>€39.74 cost per lead</strong>, proving emotional messaging converts. This is an iteration of the original IMG8, validating the creative iteration strategy. The "She said yes" family of ads collectively drove 251 clicks, confirming this emotional angle works. <span class="highlight">"IMG10.1 - Waiting for"</span> shows solid performance with 97 clicks and 74.23% LP rate. Videos are still in testing phase with limited volume but show potential.</p>
+                    <h4><span class="editable-text">✅ Creative Insights - Engagement</span></h4>
+                    <p><span class="highlight">"IMG7.1 - Single rings"</span> leads with <strong><span class="editable-text">84.92% LP view rate</span></strong> and 179 clicks, showing clean product photography strongly resonates. <span class="highlight">"IMG8.2 - She said yes"</span> generated the campaign's single lead at an outstanding <strong><span class="editable-text">€39.74 cost per lead</span></strong>, proving emotional messaging converts. This is an iteration of the original IMG8, validating the creative iteration strategy. The "She said yes" family of ads collectively drove 251 clicks, confirming this emotional angle works. <span class="highlight">"IMG10.1 - Waiting for"</span> shows solid performance with 97 clicks and 74.23% LP rate. Videos are still in testing phase with limited volume but show potential.</p>
                 </div>
             </div>
 
@@ -1522,12 +1529,12 @@
                 <div class="phase-banner">
                     <h3><span class="editable-text">🎯 Engagement Campaign Key Takeaways</span></h3>
                     <ul style="margin-top: 15px;">
-                        <li><strong>Audience Success:</strong> Men 25-34 drive 74% of clicks and the conversion</li>
-                        <li><strong>LP View Rate Champion:</strong> 69.14% rate (highest across both campaigns)</li>
-                        <li><strong>Creative Winner:</strong> "She said yes" emotional messaging converts at €40 CPL</li>
-                        <li><strong>Product Photography:</strong> IMG7.1 single rings achieve 84.92% LP rate</li>
-                        <li><strong>Interest Targeting:</strong> Luxury jewelry brands successfully reach active researchers</li>
-                        <li><strong>Geographic Opportunity:</strong> Wallonia shows best efficiency (€0.67 CPC, 0.87% CTR)</li>
+                        <li><strong><span class="editable-text">Audience Success:</span></strong> Men 25-34 drive 74% of clicks and the conversion</li>
+                        <li><strong><span class="editable-text">LP View Rate Champion:</span></strong> 69.14% rate (highest across both campaigns)</li>
+                        <li><strong><span class="editable-text">Creative Winner:</span></strong> "She said yes" emotional messaging converts at €40 CPL</li>
+                        <li><strong><span class="editable-text">Product Photography:</span></strong> IMG7.1 single rings achieve 84.92% LP rate</li>
+                        <li><strong><span class="editable-text">Interest Targeting:</span></strong> Luxury jewelry brands successfully reach active researchers</li>
+                        <li><strong><span class="editable-text">Geographic Opportunity:</span></strong> Wallonia shows best efficiency (€0.67 CPC, 0.87% CTR)</li>
                     </ul>
                 </div>
             </div>
@@ -1537,7 +1544,7 @@
             <!-- ========================================== -->
             
             <div class="section">
-                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;">🔍 Cross-Campaign Comparative Analysis</h2>
+                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;"><span class="editable-text">🔍 Cross-Campaign Comparative Analysis</span></h2>
 
                 <div class="chart-container">
                     <div class="chart-title">Volume Metrics Comparison: Wedding vs Engagement</div>
@@ -1554,30 +1561,30 @@
             
             
             <div class="section">
-                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;">💬 November's Summary</h2>
+                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;"><span class="editable-text">💬 November's Summary</span></h2>
                 <div style="padding: 0 20px;">
                     <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); padding: 40px 45px; border-radius: 12px; border: 2px solid #fbbf24; box-shadow: 0 2px 8px rgba(251, 191, 36, 0.08); margin: 20px 0;">
-                        <p style="font-size: 1.05em; line-height: 1.9; color: #78350f; margin: 0; font-weight: 400; letter-spacing: 0.3px;">
+                        <p style="font-size: 1.05em; line-height: 1.9; color: #78350f; margin: 0; font-weight: 400; letter-spacing: 0.3px;"><span class="editable-text">
                             November delivered the engagement metrics we needed to move forward with confidence. Landing page view rates steadily improved, CPC remained stable across both campaigns proving the audience targeting and creative direction are sound. The key learning: specific messaging drives action. Testimonial content, emotional imagery, and clear product showcases consistently outperform generic creative. December's strategy flows directly from this insight: optimize toward lean, elegant ads that speak directly to our premium audience with action-driven messaging. We're fine-tuning what works, not reinventing.
-                        </p>
+                        </span></p>
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;">🚀 Strategic Focus for December</h2>
+                <h2 class="section-title" style="padding-left: 20px; padding-right: 20px;"><span class="editable-text">🚀 Strategic Focus for December</span></h2>
                 <div style="padding: 0 20px;">
-                    <p style="font-size: 1.15em; line-height: 2; color: #334155;">
+                    <p style="font-size: 1.15em; line-height: 2; color: #334155;"><span class="editable-text">
                         December priorities center on iterating proven performers while deepening our understanding of user behavior. We'll continue refining the ads showing strong engagement metrics, using Clarity and Google Analytics to track on-site behavior and identify conversion opportunities. The focus shifts from testing to optimization: driving high-quality engagement with users already familiar with Juna Fae, converting interest into appointments. December represents peak engagement ring season, making this the critical month to capitalize on both engagement and wedding campaign momentum built through November's data gathering phase.
-                    </p>
+                    </span></p>
                 </div>
             </div>
         </div>
         
         <div class="footer">
             <p style="color: white;"><strong style="color: white;">Reporting Period:</strong> November 1-30, 2025 | Optimization Phase Complete</p>
-            <p style="margin-top: 10px; color: white;">📊 3 Leads Generated | €1,425.81 Total Investment | 67% Average LP View Rate</p>
-            <p style="margin-top: 15px; font-size: 0.95em; color: white;">Questions about December strategy or Christmas creative planning? Let's discuss next steps.</p>
+            <p style="margin-top: 10px; color: white;"><span class="editable-text">📊 3 Leads Generated | €1,425.81 Total Investment | 67% Average LP View Rate</span></p>
+            <p style="margin-top: 15px; font-size: 0.95em; color: white;"><span class="editable-text">Questions about December strategy or Christmas creative planning? Let's discuss next steps.</span></p>
         </div>
     </div>
     
@@ -1877,7 +1884,7 @@
         var input = document.getElementById('passwordInput');
         var error = document.getElementById('passwordError');
         
-        modal.style.display = 'flex';
+        modal.classList.add('active');
         error.style.display = 'none';
         input.value = '';
         input.focus();
@@ -1889,7 +1896,7 @@
     }
     
     function closePasswordModal() {
-        document.getElementById('passwordModal').style.display = 'none';
+        document.getElementById('passwordModal').classList.remove('active');
     }
     
     function submitPassword() {
